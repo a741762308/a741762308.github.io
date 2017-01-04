@@ -14,7 +14,7 @@
 <meta property="og:url" content="//dongqing123.cn/2017/01/04/OkHttp的使用/index.html">
 <meta property="og:site_name" content="董庆的博客">
 <meta property="og:description" content="网络请求框架我一直都使用httpclient，后来改成了xutils，但是去年开始自从Android6.0去掉了httpclient的支持，想要使用还要在build.gradle添加useLibrary &amp;#39;org.apache.http.legacy&amp;#39;，加上google的推广，Okhttp变得非常火了起来，于是自己也修改自己的网络框架。我使用时OkHttp已经出现3.0的版本了，与">
-<meta property="og:updated_time" content="2017-01-04T03:20:51.000Z">
+<meta property="og:updated_time" content="2017-01-04T03:38:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OkHttp的使用">
 <meta name="twitter:description" content="网络请求框架我一直都使用httpclient，后来改成了xutils，但是去年开始自从Android6.0去掉了httpclient的支持，想要使用还要在build.gradle添加useLibrary &amp;#39;org.apache.http.legacy&amp;#39;，加上google的推广，Okhttp变得非常火了起来，于是自己也修改自己的网络框架。我使用时OkHttp已经出现3.0的版本了，与">
@@ -177,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>网络请求框架我一直都使用httpclient，后来改成了xutils，但是去年开始自从Android6.0去掉了httpclient的支持，想要使用还要在<code>build.gradle</code>添加<code>useLibrary &#39;org.apache.http.legacy&#39;</code>，加上google的推广，Okhttp变得非常火了起来，于是自己也修改自己的网络框架。<br>我使用时OkHttp已经出现3.0的版本了，与2.0的版本还是有一些差别的</p>
+        <p>网络请求框架我一直都使用httpclient，后来改成了xutils，但是去年开始自从Android6.0去掉了httpclient的支持，想要使用还要在<code>build.gradle</code>添加<code>useLibrary &#39;org.apache.http.legacy&#39;</code>，加上google的推广，Okhttp变得非常火了起来，于是自己也修改自己的网络框架。<br>我使用时OkHttp已经出现3.0的版本了，与2.0的版本还是有一些差别的<br><a id="more"></a></p>
 <h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>基本上没有什么区别</p>
 <h4 id="2-0"><a href="#2-0" class="headerlink" title="2.0"></a>2.0</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">client.setConnectTimeout(<span class="number">15</span>,TimeUnit.SECONDS);</div><div class="line">client.setWriteTimeout(<span class="number">20</span>,TimeUnit.SECONDS);    </div><div class="line">client.setReadTimeout(<span class="number">20</span>,TimeUnit.SECONDS);</div><div class="line">Request request = <span class="keyword">new</span> Request.Builder().url(url).build();</div><div class="line">Response response = client.newCall(request).execute();</div></pre></td></tr></table></figure>
 <h4 id="3-0"><a href="#3-0" class="headerlink" title="3.0"></a>3.0</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">client.newBuilder().connectTitmeout(<span class="number">15</span>,TimeUnit.SECONDS)</div><div class="line">client.newBuilder().readTimeout(<span class="number">15</span>,TimeUnit.SECONDS)</div><div class="line">client.newBuilder().wirteTimeout(<span class="number">15</span>,TimeUnit.SECONDS)</div><div class="line">Request request = <span class="keyword">new</span> Request.Builder().url(url).build();</div><div class="line">Response response = client.newCall(request).execute();</div></pre></td></tr></table></figure>
@@ -284,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/04/React-Native-配置/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/04/2016年总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          React Native 配置
+          2016年总结
         
       </div>
     </a>
   
   
-    <a href="/2016/12/31/2016年总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2016年总结</div>
+    <a href="/2016/12/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
