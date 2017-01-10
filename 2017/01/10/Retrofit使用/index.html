@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="董庆的博客">
 <meta property="og:description" content="&amp;#8195;&amp;#8195;上篇我们介绍了OkHttp的使用，OkHttp虽说是网络请求，但和velley、nohttp等不大相同，它属于底层的东西，是没有经过封装的。今天我们讨论的retrofit就是对okhttp进行了封装，是一个非常棒的网络请求框架。&amp;#8195;&amp;#8195;retrofit是主要是通过注解的形式来写请求接口，并且支持Rx，配合使用有奇效。">
 <meta property="og:image" content="http://2t.5068.com/uploads/allimg/160325/62-160325141226-51.jpg">
-<meta property="og:updated_time" content="2017-01-10T08:29:15.000Z">
+<meta property="og:updated_time" content="2017-01-10T08:41:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Retrofit使用">
 <meta name="twitter:description" content="&amp;#8195;&amp;#8195;上篇我们介绍了OkHttp的使用，OkHttp虽说是网络请求，但和velley、nohttp等不大相同，它属于底层的东西，是没有经过封装的。今天我们讨论的retrofit就是对okhttp进行了封装，是一个非常棒的网络请求框架。&amp;#8195;&amp;#8195;retrofit是主要是通过注解的形式来写请求接口，并且支持Rx，配合使用有奇效。">
@@ -201,27 +201,23 @@ var _hmt = _hmt || [];
 <li>get请求<ul>
 <li><code>@GET</code>  申明get请求方式，括号里面是请求路径。</li>
 <li><code>@Query</code>  请求参数对应的键值，括号内为key，参数为value。</li>
-<li><code>@QueryMap</code> 如果Query参数比较多，那么可以通过@QueryMap方式将所     有的参数集成在一个Map。</li>
+<li><code>@QueryMap</code> 如果Query参数比较多，那么可以通过@QueryMap方式将所有的参数集成在一个Map。</li>
 <li><code>@Path</code> 会把参数填充到路径上，如上面的<code>@Path(&quot;year&quot;)</code> <code>@Path(&quot;month&quot;)</code> <code>@Path(&quot;day&quot;)</code> 会填充<code>@GET(&quot;day/{year}/{month}/{day}&quot;)</code> 中的year、month、day。<code>@Path</code>可用于任何请求方式。</li>
 <li><code>@Url</code> 不使用baseUrl。</li>
 </ul>
 </li>
-<li>post请求</li>
-</ol>
-<ul>
-<li><code>@POST</code>  申明post请求方式，括号里面是请求路径。<ul>
+<li>post请求<ul>
+<li><code>@POST</code>  申明post请求方式，括号里面是请求路径。</li>
 <li><code>@FormUrlEncoded</code> 自动将请求参数的类型调整为application/x-www-form-urlencoded，FormUrlEncoded不能用于Get请求。</li>
 <li><code>@Field</code> 请求参数对应的键值。</li>
-<li><code>@FieldMap</code> 如果Field参数比较多，那么可以通过<code>@FieldMap</code>方式将所有的参数集成在一个Map。</li>
+<li><code>@FieldMap</code> 如果Field参数比较多，那么可以通过<code>@FieldMap</code> 方式将所有的参数集成在一个Map。</li>
 <li><code>@Body</code> 请求参数有多个，那么统一封装到类中应该会更好，这样维护起来会非常方便。</li>
 </ul>
 </li>
-</ul>
-<ol>
 <li>上传文件<ul>
 <li><code>@Multipart</code> 申明为上传文件方式。</li>
-<li><code>@Part</code> 参数列表 <code>MultipartBody.Part</code>为文件类型，<code>RequestBody</code>为一般参数。</li>
-<li><code>@PartMap</code>  如果Part参数比较多，那么可以通过<code>@PartMap</code>方式将所有的参数集成在一个Map。<code>@PartMap Map&lt;String, RequestBody&gt; params</code>可以是多个文件，也可是文件与参数混合。</li>
+<li><code>@Part</code> 参数列表 <code>MultipartBody.Part</code> 为文件类型，<code>RequestBody</code> 为一般参数。</li>
+<li><code>@PartMap</code> 如果Part参数比较多，那么可以通过<code>@PartMap</code> 方式将所有的参数集成在一个Map。<code>@PartMap Map&lt;String, RequestBody&gt; params</code> 可以是多个文件，也可是文件与参数混合。</li>
 </ul>
 </li>
 </ol>
