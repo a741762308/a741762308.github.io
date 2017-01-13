@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//dongqing123.cn">
-  <title>2016年总结 | 董庆的博客</title>
+  <title>realm简单使用 | 董庆的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#8195;&amp;#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。&amp;#8195;&amp;#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。">
+  <meta name="description" content="数据库——android四大存储之一，说实话已经很久没有使用了，平时是要使用网络与文件存储，除非是需要离线模式，或者有特殊的要求。realm——一款轻量级的移动端数据库，相比SQLite和其他orm框架有着其许多的优点，以前只是听过，今天来一睹庐山真面目。相比SQLite，Realm更快并且具有很多现代数据库的特性，比如支持JSON，流式api（Rx），数据变更通知，以及加密支持，这些都为安卓开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016年总结">
-<meta property="og:url" content="//dongqing123.cn/2017/01/04/2016年总结/index.html">
+<meta property="og:title" content="realm简单使用">
+<meta property="og:url" content="//dongqing123.cn/2017/01/13/realm简单使用/index.html">
 <meta property="og:site_name" content="董庆的博客">
-<meta property="og:description" content="&amp;#8195;&amp;#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。&amp;#8195;&amp;#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。">
-<meta property="og:updated_time" content="2017-01-06T03:01:08.000Z">
+<meta property="og:description" content="数据库——android四大存储之一，说实话已经很久没有使用了，平时是要使用网络与文件存储，除非是需要离线模式，或者有特殊的要求。realm——一款轻量级的移动端数据库，相比SQLite和其他orm框架有着其许多的优点，以前只是听过，今天来一睹庐山真面目。相比SQLite，Realm更快并且具有很多现代数据库的特性，比如支持JSON，流式api（Rx），数据变更通知，以及加密支持，这些都为安卓开发">
+<meta property="og:updated_time" content="2017-01-13T10:25:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016年总结">
-<meta name="twitter:description" content="&amp;#8195;&amp;#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。&amp;#8195;&amp;#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。">
+<meta name="twitter:title" content="realm简单使用">
+<meta name="twitter:description" content="数据库——android四大存储之一，说实话已经很久没有使用了，平时是要使用网络与文件存储，除非是需要离线模式，或者有特殊的要求。realm——一款轻量级的移动端数据库，相比SQLite和其他orm框架有着其许多的优点，以前只是听过，今天来一睹庐山真面目。相比SQLite，Realm更快并且具有很多现代数据库的特性，比如支持JSON，流式api（Rx），数据变更通知，以及加密支持，这些都为安卓开发">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -167,27 +167,61 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016年总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-realm简单使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      2016年总结
+      realm简单使用
     </h1>
   
 
         
-        <a href="/2017/01/04/2016年总结/" class="archive-article-date">
-  	<time datetime="2017-01-04T03:21:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-04</time>
+        <a href="/2017/01/13/realm简单使用/" class="archive-article-date">
+  	<time datetime="2017-01-13T10:22:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&#8195;&#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。<br>&#8195;&#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。<br><a id="more"></a><br>&#8195;&#8195;说实话我是不喜欢写总结来着，这算是我第一次。想想自己都出来3年了，考研的现在也该毕业了，自己的年龄也是越来越大，精力也不想以前那么充沛了，实在不想再浑浑噩噩的过日子。<br>&#8195;&#8195;废话说了这么多，看看我16年都干了些什么。<br>&#8195;&#8195;想了想实在不知道干么了。。。<br>&#8195;&#8195;3月份当时点窝业务还在，还在维护点窝商城与电视TV，还有就是我的手下离职了，我成了孤家寡人，之后就开始做电子券与供销通的业务。<br>&#8195;&#8195;说起来就觉得公司比较坑，app做了一版又一版就是没有投入使用，给我的感觉就是我做的app一个都没上线。之后我就开始投入到万千同性交友网站github的怀抱，写demo。<br>&#8195;&#8195;好了基本上就这些，然后就是学习。<br>&#8195;&#8195;学习drag2、mvp 、rx、okhttp、retrofit等等开源框架，订阅与关注了许多大牛，了解RN、热修复等等相关的知识，写写演示Demo。<br>&#8195;&#8195;到12月份的时候，我终于打算写个人app上线应用商店。我开始基于gank.io写我的个人app，注册了三大平台的账号，前前后后花了大概3周的时间终于上线了，但也仅仅是上线了。<br>&#8195;&#8195;写完我是真发现没做什么实事呢。<br>&#8195;&#8195;2017年真是希望自己有所改变，不管是技术还是人际。</p>
+        <p>数据库——android四大存储之一，说实话已经很久没有使用了，平时是要使用网络与文件存储，除非是需要离线模式，或者有特殊的要求。realm——一款轻量级的移动端数据库，相比SQLite和其他orm框架有着其许多的优点，以前只是听过，今天来一睹庐山真面目。<br>相比SQLite，Realm更快并且具有很多现代数据库的特性，比如支持JSON，流式api（Rx），数据变更通知，以及加密支持，这些都为安卓开发者带来了方便。</p>
+<a id="more"></a>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>首先是在project的build.gradle中添加<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">       ...</div><div class="line">        classpath <span class="string">"io.realm:realm-gradle-plugin:2.2.2"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后是app的build.gradle中在<code>apply plugin: &#39;com.android.application&#39;</code>下面添加<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'realm-android'</span></div></pre></td></tr></table></figure></p>
+<p>现在我们sync project 就可以了。</p>
+<h2 id="创建realm"><a href="#创建realm" class="headerlink" title="创建realm"></a>创建realm</h2><p>我们需要在自定义一个类继承Application<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppContext</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate();</div><div class="line">        RealmConfiguration config = <span class="keyword">new</span> RealmConfiguration.Builder()</div><div class="line"><span class="comment">//                .name("myRealm.realm")</span></div><div class="line">                .build();</div><div class="line">        Realm.setDefaultConfiguration(config);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>注释部分为realm的名称，我们使用默认的default.realm。</li>
+<li>不要忘记在manifest中使用我们自定义的Application。</li>
+</ul>
+<h2 id="创建RealmObject"><a href="#创建RealmObject" class="headerlink" title="创建RealmObject"></a>创建RealmObject</h2><p>只要继承了RealmObject类，任意JavaBean都能存储在Realm中。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RealmBean</span> <span class="keyword">extends</span> <span class="title">RealmObject</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String openId;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isRead;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getOpenId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> openId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOpenId</span><span class="params">(String openId)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.openId = openId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isRead</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> isRead;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRead</span><span class="params">(<span class="keyword">boolean</span> read)</span> </span>&#123;</div><div class="line">        isRead = read;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h4 id="1-插入"><a href="#1-插入" class="headerlink" title="1. 插入"></a>1. 插入</h4> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertRealm</span><span class="params">(String openId)</span> </span>&#123;</div><div class="line">	Realm realm = Realm.getDefaultInstance();</div><div class="line">	realm.beginTransaction();</div><div class="line">	RealmBean bean = realm.createObject(RealmBean.class);</div><div class="line">	bean.setOpenId(openId);</div><div class="line">	bean.setRead(<span class="keyword">false</span>);</div><div class="line">	realm.commitTransaction();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>你可能注意到了bean并不是用Country类的构造器创建的。对于一个Realm来说，管理一个RealmObject的实例，这个实例必须用createObject方法创建。<br>如果你必须使用构造器，别忘了在提交事务前使用相关Realm对象的copyToRealm方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertRealm</span><span class="params">(String openId)</span> </span>&#123;</div><div class="line">	Realm realm = Realm.getDefaultInstance();</div><div class="line">	realm.beginTransaction();</div><div class="line">	RealmBean bean = <span class="keyword">new</span> RealmBean();</div><div class="line">	bean.setOpenId(openId);</div><div class="line">	bean.setRead(<span class="keyword">false</span>);</div><div class="line">	realm.copyToRealm(bean);</div><div class="line">	realm.commitTransaction();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="2-删除"><a href="#2-删除" class="headerlink" title="2. 删除"></a>2. 删除</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RealmBean <span class="title">deleteRealm</span><span class="params">(String openId)</span> </span>&#123;</div><div class="line">	Realm mRealm = Realm.getDefaultInstance();</div><div class="line">	RealmBean bean = mRealm.where(RealmBean.class).equalTo(<span class="string">"openId"</span>, openId).findFirst();</div><div class="line">	mRealm.beginTransaction();</div><div class="line">	bean.deleteFromRealm();</div><div class="line">	mRealm.commitTransaction();</div><div class="line">	<span class="keyword">return</span> bean;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-修改"><a href="#3-修改" class="headerlink" title="3. 修改"></a>3. 修改</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">updateRealm</span><span class="params">(String openId)</span> </span>&#123;</div><div class="line">	Realm mRealm = Realm.getDefaultInstance();</div><div class="line">	RealmBean bean = mRealm.where(RealmBean.class).equalTo(<span class="string">"openId"</span>, openId).findFirst();</div><div class="line">	mRealm.beginTransaction();</div><div class="line">	bean.setRead(<span class="keyword">true</span>);</div><div class="line">	mRealm.commitTransaction();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-查询"><a href="#4-查询" class="headerlink" title="4. 查询"></a>4. 查询</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RealmBean <span class="title">queryRealm</span><span class="params">(String openId)</span> </span>&#123;</div><div class="line">	Realm mRealm = Realm.getDefaultInstance();</div><div class="line">	RealmBean bean = mRealm.where(RealmBean.class).equalTo(<span class="string">"openId"</span>, openId).findFirst();</div><div class="line">	<span class="keyword">return</span> bean;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;RealmBean&gt; <span class="title">queryRealmList</span><span class="params">(<span class="keyword">boolean</span> isRead)</span> </span>&#123;</div><div class="line">	Realm mRealm = Realm.getDefaultInstance();</div><div class="line">	RealmResults&lt;RealmBean&gt; bean = mRealm.where(RealmBean.class).equalTo(<span class="string">"isRead"</span>, isRead).findAll();</div><div class="line">	<span class="keyword">return</span> bean;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>条件查询，Realm 支持以下查询条件<ul>
+<li>between()、greaterThan()、lessThan()、greaterThanOrEqualTo() 和 lessThanOrEqualTo()。</li>
+<li>equalTo() 和 notEqualTo()。</li>
+<li>contains()、beginsWith() 和 endsWith()。</li>
+<li>isNull() 和 isNotNull()。</li>
+<li>isEmpty() 和 isNotEmpty()。</li>
+</ul>
+</li>
+</ul>
+<p>以上就是realm的基本用法，虽然realm简单快捷方便，但还是有许多的短板。</p>
+<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><ul>
+<li>不是基于sqlite的，他有自己的存储引擎 ，存储不是基于表的，所以联表查询不支持。</li>
+<li>所有的数据模型必须直接继承自RealmObject。这阻碍我们利用数据模型中的任意类型的继承。</li>
+<li>Realm 没有自动增长属性。</li>
+<li>Realm对象的 Setters &amp; Getters 不能被重载</li>
+<li>尽管 Realm 文件可以被多个线程同时访问，但是您不能跨线程处理 Realms、Realm 对象、查询和查询结果。</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>realm的优点自然不用多说，一个字：快。在保证了ACID的要求下，很多设计都是以速度为主。当然，Realm 最核心的理念就是对象驱动，这是 Realm 的核心原则。Realm 本质上是一个嵌入式数据库，但是它也是看待数据的另一种方式。它用另一种角度来重新看待移动应用中的模型和业务逻辑。<br>Realm还是跨平台的，多个平台都使用相同的数据库，是多么好的一件事情呀。相信使用Realm作为App数据库的开发者会越来越多。</p>
 
       
 
@@ -232,11 +266,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">realm</a>
         		</li>
       		
 		</ul>
@@ -292,7 +330,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/01/04/2016年总结/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/01/13/realm简单使用/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +344,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/01/04/React-Native-配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          React Native 配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/04/OkHttp的使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">OkHttp的使用</div>
+    <a href="/2017/01/10/Retrofit使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Retrofit使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -331,7 +360,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016年总结" data-title="2016年总结" data-url="//dongqing123.cn/2017/01/04/2016年总结/"></div>
+	<div class="ds-thread" data-thread-key="realm简单使用" data-title="realm简单使用" data-url="//dongqing123.cn/2017/01/13/realm简单使用/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -479,6 +508,14 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">realm</a>
               </li>
             
             <div class="clearfix"></div>
