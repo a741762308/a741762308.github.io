@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//dongqing123.cn">
-  <title>2016年总结 | 董庆的博客</title>
+  <title>android 6.0 权限管理 | 董庆的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#8195;&amp;#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。&amp;#8195;&amp;#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。">
+  <meta name="description" content="&amp;#8195;&amp;#8195;如果说5.0是android上的里程碑，那么6.0就是对它的完善与升级。6.0从UI上与5.0没有任何区别，依旧坚持了好评的md风格，但不仅仅只是内核的升级而已。6.0首先是删除了apache的httpclient包，让一些网络请求框架需要对6.0进行适配，虽然有补救的方法，但官方删除了，也让okhttp更深入人心。然后就是今天我们重点讨论的权限管理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016年总结">
-<meta property="og:url" content="//dongqing123.cn/2016/12/31/2016年总结/index.html">
+<meta property="og:title" content="android 6.0 权限管理">
+<meta property="og:url" content="//dongqing123.cn/2017/01/17/android-6-0-权限管理/index.html">
 <meta property="og:site_name" content="董庆的博客">
-<meta property="og:description" content="&amp;#8195;&amp;#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。&amp;#8195;&amp;#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。">
-<meta property="og:updated_time" content="2017-01-13T06:03:01.000Z">
+<meta property="og:description" content="&amp;#8195;&amp;#8195;如果说5.0是android上的里程碑，那么6.0就是对它的完善与升级。6.0从UI上与5.0没有任何区别，依旧坚持了好评的md风格，但不仅仅只是内核的升级而已。6.0首先是删除了apache的httpclient包，让一些网络请求框架需要对6.0进行适配，虽然有补救的方法，但官方删除了，也让okhttp更深入人心。然后就是今天我们重点讨论的权限管理。">
+<meta property="og:updated_time" content="2017-01-17T06:14:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016年总结">
-<meta name="twitter:description" content="&amp;#8195;&amp;#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。&amp;#8195;&amp;#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。">
+<meta name="twitter:title" content="android 6.0 权限管理">
+<meta name="twitter:description" content="&amp;#8195;&amp;#8195;如果说5.0是android上的里程碑，那么6.0就是对它的完善与升级。6.0从UI上与5.0没有任何区别，依旧坚持了好评的md风格，但不仅仅只是内核的升级而已。6.0首先是删除了apache的httpclient包，让一些网络请求框架需要对6.0进行适配，虽然有补救的方法，但官方删除了，也让okhttp更深入人心。然后就是今天我们重点讨论的权限管理。">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -167,27 +167,46 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016年总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-android-6-0-权限管理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      2016年总结
+      android 6.0 权限管理
     </h1>
   
 
         
-        <a href="/2016/12/31/2016年总结/" class="archive-article-date">
-  	<time datetime="2016-12-31T03:21:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
+        <a href="/2017/01/17/android-6-0-权限管理/" class="archive-article-date">
+  	<time datetime="2017-01-17T06:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&#8195;&#8195;时间总是过的飞快，转眼之间2016年已经没剩几天了，想想自己都是26岁的人了，离自己的梦想也渐行渐远。<br>&#8195;&#8195;回顾这一整年，发现自己干的琐事确实蛮多的，但坚持的事总是没有，想想自己都快毕业3年了，还是碌碌无为呀。反而看了许多人写的年终总结，发现自己与他们的差距真的是非常的大，人家一年做了好多好多的实事，而我一年都不知道干了什么。<br><a id="more"></a><br>&#8195;&#8195;说实话我是不喜欢写总结来着，这算是我第一次。想想自己都出来3年了，考研的现在也该毕业了，自己的年龄也是越来越大，精力也不想以前那么充沛了，实在不想再浑浑噩噩的过日子。<br>&#8195;&#8195;废话说了这么多，看看我16年都干了些什么。<br>&#8195;&#8195;想了想实在不知道干么了。。。<br>&#8195;&#8195;3月份当时点窝业务还在，还在维护点窝商城与电视TV，还有就是我的手下离职了，我成了孤家寡人，之后就开始做电子券与供销通的业务。<br>&#8195;&#8195;说起来就觉得公司比较坑，app做了一版又一版就是没有投入使用，给我的感觉就是我做的app一个都没上线。之后我就开始投入到万千同性交友网站github的怀抱，写demo。<br>&#8195;&#8195;好了基本上就这些，然后就是学习。<br>&#8195;&#8195;学习drag2、mvp 、rx、okhttp、retrofit等等开源框架，订阅与关注了许多大牛，了解RN、热修复等等相关的知识，写写演示Demo。<br>&#8195;&#8195;到12月份的时候，我终于打算写个人app上线应用商店。我开始基于gank.io写我的个人app，注册了三大平台的账号，前前后后花了大概3周的时间终于上线了，但也仅仅是上线了。<br>&#8195;&#8195;写完我是真发现没做什么实事呢。<br>&#8195;&#8195;2017年真是希望自己有所改变，不管是技术还是人际。</p>
+        <p>&#8195;&#8195;如果说5.0是android上的里程碑，那么6.0就是对它的完善与升级。6.0从UI上与5.0没有任何区别，依旧坚持了好评的md风格，但不仅仅只是内核的升级而已。6.0首先是删除了apache的httpclient包，让一些网络请求框架需要对6.0进行适配，虽然有补救的方法，但官方删除了，也让okhttp更深入人心。然后就是今天我们重点讨论的权限管理。<br><a id="more"></a><br>&#8195;&#8195;6.0以前的app安装时，会默认授予清单文件manifest中的权限，虽然安装时会告知用户有哪些权限，但一般很少有人会在意这一点。于是各种居心叵测的厂家或者开发者往往都是列一堆的权限，做着用户所不知道的事情。从6.0开始，情况就不一样了，一些危险的权限我们不但在写在manifest中，还需要用户授予同意才能使用。可以说扼杀了一部分厂家的利益。<br>那么这些危险的权限有哪些呢?<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">permission:android.permission.WRITE_CONTACTS</div><div class="line">permission:android.permission.GET_ACCOUNTS</div><div class="line">permission:android.permission.READ_CONTACTS</div><div class="line"></div><div class="line">permission:android.permission.READ_CALL_LOG</div><div class="line">permission:android.permission.READ_PHONE_STATE</div><div class="line">permission:android.permission.CALL_PHONE</div><div class="line">permission:android.permission.WRITE_CALL_LOG</div><div class="line">permission:android.permission.USE_SIP</div><div class="line">permission:android.permission.PROCESS_OUTGOING_CALLS</div><div class="line">permission:com.android.voicemail.permission.ADD_VOICEMAIL</div><div class="line"></div><div class="line">permission:android.permission.READ_CALENDAR</div><div class="line">permission:android.permission.WRITE_CALENDAR</div><div class="line"></div><div class="line">permission:android.permission.CAMERA</div><div class="line"></div><div class="line">permission:android.permission.BODY_SENSORS</div><div class="line"></div><div class="line">permission:android.permission.ACCESS_FINE_LOCATION</div><div class="line">permission:android.permission.ACCESS_COARSE_LOCATION</div><div class="line"></div><div class="line">permission:android.permission.READ_EXTERNAL_STORAGE</div><div class="line">permission:android.permission.WRITE_EXTERNAL_STORAGE</div><div class="line"></div><div class="line">permission:android.permission.RECORD_AUDIO</div><div class="line"></div><div class="line">permission:android.permission.READ_SMS</div><div class="line">permission:android.permission.RECEIVE_WAP_PUSH permission:android.permission.RECEIVE_MMS</div><div class="line">permission:android.permission.RECEIVE_SMS</div><div class="line">permission:android.permission.SEND_SMS</div><div class="line">permission:android.permission.READ_CELL_BROADCASTS</div></pre></td></tr></table></figure></p>
+<p>至于如何适配6.0之后的手机，主要有2种方式<br>1.app的build.gradle中 targetSdkVersion <23 这种方式简单粗暴，安装时依然会默认授予全部的权限，但是用户可以在app的权限管理中关闭某些权限，可能导致app无法运行。="" 2.如果targetsdkversion="">=23则需要写相应的适配代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">hasPermission</span><span class="params">(@NonNull Context context, @NonNull String... permissions)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.M) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">       <span class="keyword">for</span> (String permission : permissions) &#123;</div><div class="line">           <span class="keyword">boolean</span> hasPermission = (ContextCompat.checkSelfPermission(context, permission) == PackageManager</div><div class="line">                   .PERMISSION_GRANTED);</div><div class="line">           <span class="keyword">if</span> (!hasPermission) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></23></p>
+<p>我们先判断android版本，有没有权限，然后若没有权限就申请<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">requestPermission</span><span class="params">(@NonNull Activity activity, <span class="keyword">int</span> requestCode, @NonNull String... permissions)</span> </span>&#123;</div><div class="line">	String [] ps=<span class="keyword">new</span> String[permissions.length];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;permissions.length;i++)&#123;</div><div class="line">    		ps[i]=permissions[i];</div><div class="line">        &#125;</div><div class="line">        ActivityCompat.requestPermissions(activity, ps, requestCode);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>然后就是权限授予的回调<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">	<span class="comment">//这里就可以处理了</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果用户拒绝了授予，则可以使用如下方法给用户解释为什么需要该权限，返回true我们就弹出解释对话框,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">shouldShowRationalePermissions</span><span class="params">(Object o, String... permissions)</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (String permission : permissions) &#123;</div><div class="line">            <span class="keyword">if</span> (o <span class="keyword">instanceof</span> Activity) &#123;</div><div class="line">                <span class="keyword">return</span> ActivityCompat.shouldShowRequestPermissionRationale((Activity) o, permission);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (o <span class="keyword">instanceof</span> android.support.v4.app.Fragment) &#123;</div><div class="line">                <span class="keyword">return</span> ((android.support.v4.app.Fragment) o).shouldShowRequestPermissionRationale(permission);</div><div class="line">            &#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果用户不但拒绝，还点击了不再提醒，就比较麻烦了，因为不会再有授权框了，我们只能检测如果权限拒绝了，弹出提示框，要用户到权限管理中心去开启权限。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">hasAlwaysDeniedPermissio</span><span class="params">(Object o, @NonNull List&lt;String&gt;</span></span></div><div class="line">            deniedPermissions) &#123;</div><div class="line">	<span class="keyword">for</span> (String deniedPermission : deniedPermissions) &#123;</div><div class="line">		<span class="keyword">if</span>(!shouldShowRationalePermissions(o,deniedPermission))</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以上就是处理6.0以上的权限问题，但不一定适配国产等机型，毕竟国内各大Rom修改源码比较严重，有自家的权限管理，需要特殊处理。<br>目前github上开源的权限管理也有不少</p>
+<ul>
+<li>lovedise的<a href="https://github.com/lovedise/PermissionGen" target="_blank" rel="external">PermissionGen</a></li>
+<li>PermissionGen的升级版 yanzhenjie的<a href="https://github.com/yanzhenjie/AndPermission" target="_blank" rel="external">AndPermission</a></li>
+<li>hotchemi的<a href="https://github.com/hotchemi/PermissionsDispatcher" target="_blank" rel="external">PermissionsDispatcher</a>,插件地址<a href="https://github.com/shiraji/permissions-dispatcher-plugin" target="_blank" rel="external">permissions-dispatcher-plugin</a></li>
+<li>k0shk0sh的<a href="https://github.com/k0shk0sh/PermissionHelper" target="_blank" rel="external">PermissionHelper</a></li>
+<li>ParkSangGwon的<a href="https://github.com/ParkSangGwon/TedPermission" target="_blank" rel="external">TedPermission</a></li>
+<li>Google官方googlesamples的<a href="https://github.com/googlesamples/easypermissions" target="_blank" rel="external">easypermissions</a></li>
+<li>anthonycrd的<a href="https://github.com/anthonycr/Grant" target="_blank" rel="external">Grant</a></li>
+<li>基于Rx的<a href="https://github.com/tbruyelle/RxPermissions" target="_blank" rel="external">RxPermissions</a></li>
+<li>Karumi的<a href="https://github.com/Karumi/Dexter" target="_blank" rel="external">Dexter</a></li>
+<li>张鸿洋的<a href="https://github.com/hongyangAndroid/MPermissions" target="_blank" rel="external">MPermissions</a></li>
+</ul>
+<p>各有优劣，不过对于国产手机，自带权限管理可能需要自行适配了哦。</p>
 
       
 
@@ -232,11 +251,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
@@ -292,7 +311,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2016/12/31/2016年总结/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/01/17/android-6-0-权限管理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +325,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/01/04/OkHttp的使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          OkHttp的使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/01/13/realm简单使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">realm简单使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -331,7 +341,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016年总结" data-title="2016年总结" data-url="//dongqing123.cn/2016/12/31/2016年总结/"></div>
+	<div class="ds-thread" data-thread-key="android-6-0-权限管理" data-title="android 6.0 权限管理" data-url="//dongqing123.cn/2017/01/17/android-6-0-权限管理/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
