@@ -14,15 +14,15 @@
 <meta property="og:url" content="//dongqing123.cn/2017/01/23/RecyclerView与CardView的使用/index.html">
 <meta property="og:site_name" content="董庆的博客">
 <meta property="og:description" content="2014年google发布了android5.0的版本，系统使用一种新的Material Design设计风格，也给我们带来了很多新的特性，RecyclerView与CardView就是起新的两个组件。以前我们写列表布局时都是用ListView、GridView等控件，比较繁琐的就是写Adapter了，而且还要对其优化加入viewholder类。现在RecyclerView就可以替代ListVi">
-<meta property="og:image" content="//dongqing123.cn/timg.jpg">
-<meta property="og:image" content="//dongqing123.cn/Linear-recyler.jpg">
-<meta property="og:image" content="//dongqing123.cn/gridview-recyler.jpg">
-<meta property="og:image" content="//dongqing123.cn/staggered-recyler.jpg">
-<meta property="og:updated_time" content="2017-01-23T07:16:13.000Z">
+<meta property="og:image" content="//dongqing123.cn/images/timg.jpg">
+<meta property="og:image" content="//dongqing123.cn/images/Linear-recyler.jpg">
+<meta property="og:image" content="//dongqing123.cn/images/gridview-recyler.jpg">
+<meta property="og:image" content="//dongqing123.cn/images/staggered-recyler.jpg">
+<meta property="og:updated_time" content="2017-01-23T07:19:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RecyclerView与CardView的使用">
 <meta name="twitter:description" content="2014年google发布了android5.0的版本，系统使用一种新的Material Design设计风格，也给我们带来了很多新的特性，RecyclerView与CardView就是起新的两个组件。以前我们写列表布局时都是用ListView、GridView等控件，比较繁琐的就是写Adapter了，而且还要对其优化加入viewholder类。现在RecyclerView就可以替代ListVi">
-<meta name="twitter:image" content="//dongqing123.cn/timg.jpg">
+<meta name="twitter:image" content="//dongqing123.cn/images/timg.jpg">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -192,7 +192,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="timg.jpg" alt=""></p>
+        <p><img src="/images/timg.jpg" alt=""></p>
 <p>2014年google发布了android5.0的版本，系统使用一种新的Material Design设计风格，也给我们带来了很多新的特性，RecyclerView与CardView就是起新的两个组件。<br>以前我们写列表布局时都是用ListView、GridView等控件，比较繁琐的就是写Adapter了，而且还要对其优化加入viewholder类。现在RecyclerView就可以替代ListView、GridView，而且自带Holder，加上默认的三种布局方式，可以说给开发者带来很大的好处。<br><a id="more"></a></p>
 <h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>RecyclerView使用上与一般的AdapterView并没有什么区别，<br>我们先在build.gradle中添加RecyclerView与CardView的依赖<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile <span class="string">'com.android.support:recylerview-v7:25.0.1'</span></div><div class="line">    compile <span class="string">'com.android.support:cardview-v7:25.0.1'</span></div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>layout中<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/recyclerView"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:overScrollMode</span>=<span class="string">"never"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line">...</div></pre></td></tr></table></figure></p>
@@ -224,9 +224,9 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ul>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="Linear-recyler.jpg" alt="">   </p>
-<p><img src="gridview-recyler.jpg" alt=""></p>
-<p><img src="staggered-recyler.jpg" alt=""></p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/images/Linear-recyler.jpg" alt="">   </p>
+<p><img src="/images/gridview-recyler.jpg" alt=""></p>
+<p><img src="/images/staggered-recyler.jpg" alt=""></p>
 <h2 id="github上相关资源"><a href="#github上相关资源" class="headerlink" title="github上相关资源"></a>github上相关资源</h2><ul>
 <li><a href="https://github.com/gabrielemariotti/RecyclerViewItemAnimators" target="_blank" rel="external">RecyclerViewItemAnimators</a></li>
 <li><a href="https://gist.github.com/alexfu/0f464fc3742f134ccd1e" target="_blank" rel="external">DividerItemDecoration</a></li>
