@@ -17,7 +17,7 @@
 <meta property="og:description" content="我一篇我们介绍了DrawerLayout的使用，通过它我们实现一个侧滑的菜单，也说明了一些菜单中的操作及开源的侧滑菜单库，今天我们讲解伸缩的ViewPage，现实生活中有许多的app比如新闻资讯、阅读、影视等都采用ViewPage作为分页的导航，如哔哩哔哩动画Android端
 看效果是不是有点感觉很惊艳，其实实现起来很容易的。">
 <meta property="og:image" content="//dongqing123.cn/images/bilibili.gif">
-<meta property="og:updated_time" content="2017-02-07T07:38:19.000Z">
+<meta property="og:updated_time" content="2017-02-09T04:29:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android design库的使用（二）">
 <meta name="twitter:description" content="我一篇我们介绍了DrawerLayout的使用，通过它我们实现一个侧滑的菜单，也说明了一些菜单中的操作及开源的侧滑菜单库，今天我们讲解伸缩的ViewPage，现实生活中有许多的app比如新闻资讯、阅读、影视等都采用ViewPage作为分页的导航，如哔哩哔哩动画Android端
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
 <li>snap<br>简单理解，就是Child View滚动比例的一个吸附效果。也就是说，Child View不会存在局部显示的情况，滚动Child View的部分高度，当我们松开手指时，Child View要么向上全部滚出屏幕，要么向下全部滚进屏幕，有点类似ViewPager的左右滑动。</li>
 <li>exitUntilCollapsed<br>发生向上滚动事件时，Child View向上滚动退出直至最小高度，然后Scrolling View开始滚动。也就是，Child View不会完全退出屏幕。</li>
 </ol>
-<h2 id="app-layout-behavior"><a href="#app-layout-behavior" class="headerlink" title="app:layout_behavior"></a>app:layout_behavior</h2><p>Behavior是一系列回调。让你有机会以非侵入的为View添加动态的依赖布局，和处理父布局(CoordinatorLayout)滑动手势的机会。详细见<a href="">自定义Behavior</a><br><code>@string/appbar_scrolling_view_behavior</code><br>(android.support.design.widget.AppBarLayout$ScrollingViewBehavior)作用是自己放到AppBarLayout的下面。</p>
+<h2 id="app-layout-behavior"><a href="#app-layout-behavior" class="headerlink" title="app:layout_behavior"></a>app:layout_behavior</h2><p>Behavior是一系列回调。让你有机会以非侵入的为View添加动态的依赖布局，和处理父布局(CoordinatorLayout)滑动手势的机会。详细见<a href="/2017/02/09/自定义Behavior（一）/">自定义Behavior</a><br><code>@string/appbar_scrolling_view_behavior</code><br>(android.support.design.widget.AppBarLayout$ScrollingViewBehavior)作用是自己放到AppBarLayout的下面。</p>
 <p>现在再看这些效果是不是so easy呢？上面介绍的一些layout_scrollFlags与layout_behavior没有详细的介绍，以后会填上这些坑的。</p>
 
       
@@ -543,6 +543,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">realm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Behavior</a>
               </li>
             
             <div class="clearfix"></div>
