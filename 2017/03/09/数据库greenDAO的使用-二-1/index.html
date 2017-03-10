@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//dongqing123.cn">
-  <title>Tag: greenDAO | 董庆的博客</title>
+  <title>数据库greenDAO的使用（二） | 董庆的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="合肥学院10级，Android码农一枚。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="董庆的博客">
-<meta property="og:url" content="//dongqing123.cn/tags/greenDAO/index.html">
+  <meta name="description" content="上一篇数据库greenDAO的使用（一）我们介绍了greenDAO的相关配置与注解，现在开始介绍数据的操作增、删、查、改。首先我们新建一个实体类12345678910@Entitypublic class User &amp;#123;    @Id(autoincrement = true)    private Long id;    private String name;    @Transien">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库greenDAO的使用（二）">
+<meta property="og:url" content="//dongqing123.cn/2017/03/09/数据库greenDAO的使用-二-1/index.html">
 <meta property="og:site_name" content="董庆的博客">
-<meta property="og:description" content="合肥学院10级，Android码农一枚。">
+<meta property="og:description" content="上一篇数据库greenDAO的使用（一）我们介绍了greenDAO的相关配置与注解，现在开始介绍数据的操作增、删、查、改。首先我们新建一个实体类12345678910@Entitypublic class User &amp;#123;    @Id(autoincrement = true)    private Long id;    private String name;    @Transien">
+<meta property="og:updated_time" content="2017-03-10T02:11:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="董庆的博客">
-<meta name="twitter:description" content="合肥学院10级，Android码农一枚。">
+<meta name="twitter:title" content="数据库greenDAO的使用（二）">
+<meta name="twitter:description" content="上一篇数据库greenDAO的使用（一）我们介绍了greenDAO的相关配置与注解，现在开始介绍数据的操作增、删、查、改。首先我们新建一个实体类12345678910@Entitypublic class User &amp;#123;    @Id(autoincrement = true)    private Long id;    private String name;    @Transien">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -166,82 +167,130 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据库greenDAO的使用-二-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/数据库greenDAO的使用-三/" class="archive-article-date">
-  	<time datetime="2017-03-10T02:04:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/数据库greenDAO的使用-三/">数据库greenDAO的使用（三）</a>
+    <h1 class="article-title" itemprop="name">
+      数据库greenDAO的使用（二）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/09/数据库greenDAO的使用-二-1/" class="archive-article-date">
+        
+        <a href="/2017/03/09/数据库greenDAO的使用-二-1/" class="archive-article-date">
   	<time datetime="2017-03-09T02:02:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/09/数据库greenDAO的使用-二-1/">数据库greenDAO的使用（二）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="/2017/03/08/数据库greenDAO的使用-一/">数据库greenDAO的使用（一）</a>我们介绍了greenDAO的相关配置与注解，现在开始介绍数据的操作增、删、查、改。<br>首先我们新建一个实体类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span>(autoincrement = <span class="keyword">true</span>)</div><div class="line">    <span class="keyword">private</span> Long id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="meta">@Transient</span></div><div class="line">    <span class="keyword">private</span> String sex;</div><div class="line">    <span class="comment">//@Transient</span></div><div class="line">    <span class="keyword">private</span> Integer age;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>点击工具栏Build菜单下的Make Project（Mac快捷键 ⌘F9 )，项目会自动构建，在我们设置的daoPackage（默认包名.gen）目录下生成相应的DaoMaster、DaoSession及UserDao，相应的Uer类也会自动生成构造与set、get方法。<br>然后我们定义一个管理类用于获取DaoMaster与DaoSession<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GreenDaoManager</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">private</span> DaoMaster mDaoMaster;</div><div class="line">  <span class="keyword">private</span> DaoSession mDaoSession;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">GreenDaoManager</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      init();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * 静态内部类，实例化对象使用</div><div class="line">   */</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstanceHolder</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> GreenDaoManager INSTANCE = <span class="keyword">new</span> GreenDaoManager();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * 对外唯一实例的接口</div><div class="line">   *</div><div class="line">   * <span class="doctag">@return</span></div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GreenDaoManager <span class="title">getInstance</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="keyword">return</span> SingleInstanceHolder.INSTANCE;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * 初始化数据</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      DaoMaster.DevOpenHelper devOpenHelper = <span class="keyword">new</span> DaoMaster.DevOpenHelper(App.getAppContext(), <span class="string">"test.db"</span>);</div><div class="line">      mDaoMaster = <span class="keyword">new</span> DaoMaster(devOpenHelper.getWritableDatabase());</div><div class="line">      mDaoSession = mDaoMaster.newSession();</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> DaoMaster <span class="title">getmDaoMaster</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="keyword">return</span> mDaoMaster;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> DaoSession <span class="title">getmDaoSession</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="keyword">return</span> mDaoSession;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> DaoSession <span class="title">getNewSession</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      mDaoSession = mDaoMaster.newSession();</div><div class="line">      <span class="keyword">return</span> mDaoSession;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在这里我们需要自定义application<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> App INSTANCE;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> App <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> INSTANCE;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate();</div><div class="line">        INSTANCE = <span class="keyword">this</span>;</div><div class="line">        GreenDaoManager.getInstance();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Context <span class="title">getAppContext</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> INSTANCE.getApplicationContext();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样基本的配置结结束了<br>AbstractDao常用方法</p>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><ul>
+<li>insert(T entity)：将给定的实体插入数据库</li>
+<li>insertWithoutSettingPk(T entity)：将给定的实体插入数据库,但不设定主键  </li>
+<li>insertInTx(Iterable<t> entities)：使用事务操作，将给定的实体集合插入数据库 </t></li>
+<li>insertInTx(Iterable<t> entities, boolean setPrimaryKey)使用事务操作，将给定的实体集合插入数据库， 并设置是否设定主键  </t></li>
+<li>insertInTx(T… entities)：将给定的实体插入数据库 </li>
+<li>insertOrReplace(T entity)：将给定的实体插入数据库，若此实体存在，则覆盖 </li>
+<li>insertOrReplaceInTx(Iterable<t> entities)：使用事务操作，将给定的实体插入数据库，若此实体存在则覆盖  </t></li>
+<li>insertOrReplaceInTx(Iterable<t> entities, boolean setPrimaryKey)使用事务操作，将给定的实体插入数据库，若此实体存在则覆盖，并设置是否设定主键  </t></li>
+<li>insertOrReplaceInTx(T… entities)：用事务操作，将给定的实体插入数据库，若此实体类在则覆盖  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">userDao.insert(<span class="keyword">new</span> User(<span class="keyword">null</span>, <span class="string">"黎明"</span>,<span class="number">18</span>));</div><div class="line"><span class="keyword">if</span>(userDao.loadAll().size()&gt;<span class="number">0</span>)&#123;</div><div class="line">    ext.setText(userDao.loadAll().get(<span class="number">0</span>).getName());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><ul>
+<li>delete(T entity)：从数据库中删除给定的实体  </li>
+<li>deleteAll() ：删除数据库中全部数据 </li>
+<li>deleteByKey(K key)：从数据库中删除给定Key所对应的实体</li>
+<li>deleteByKeyInTx(java.lang.Iterable<k> keys)：使用事务操作删除数据库中给定的所有key所对应的实体  </k></li>
+<li>deleteByKeyInTx(K… keys)：使用事务操作删除数据库中给定的所有key所对应的实体</li>
+<li>deleteInTx(java.lang.Iterable<t> entities)：使用事务操作删除数据库中给定实体集合中的实体  </t></li>
+<li>deleteInTx(T… entities)：使用事务操作删除数据库中给定的实体  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">userDao.deleteByKey(<span class="number">1l</span>);</div><div class="line"> <span class="keyword">if</span>(userDao.loadAll().size()&gt;<span class="number">0</span>)&#123;</div><div class="line">     text.setText(userDao.loadAll().get(<span class="number">0</span>).getName());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><ul>
+<li>T  load(K key)：加载给定主键的实体 </li>
+<li>java.util.List<t>  loadAll()</t></li>
+<li>T  loadByRowId(long rowId) ：加载某一行并返回该行的实体</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">userDao.loadByRowId(<span class="number">1l</span>)</div></pre></td></tr></table></figure>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><ul>
+<li>update(T entity) ：更新给定的实体 </li>
+<li>updateInTx(java.lang.Iterable<t> entities) ：使用事务操作，更新给定的实体  </t></li>
+<li>updateInTx(T… entities)：使用事务操作，更新给定的实体</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">User user = userDao.load(<span class="number">1l</span>)</div><div class="line"><span class="keyword">if</span> (user != <span class="keyword">null</span>) &#123;</div><div class="line">	user.setAge(<span class="number">30</span>);</div><div class="line">	userDao.update(user);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(userDao.loadAll().size()&gt;<span class="number">0</span>)&#123;</div><div class="line">	text.setText(userDao.loadAll().get(<span class="number">0</span>).getAge());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>greenDAO支持使用queryBuilder实现更加复杂的查询</p>
+<h2 id="queryBuilder"><a href="#queryBuilder" class="headerlink" title="queryBuilder"></a>queryBuilder</h2><p>QueryBuilder能够让你在不涉及SQL语句的情况下查询实体。<br>1.where：条件查询 参数为逻辑与的关系（AND）</p>
+<p>查询姓名是黎明并且年龄&gt;=10的数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">QueryBuilder qb=userDao.queryBuilder();</div><div class="line">qb.where(UserDao.Properties.Name.eq(<span class="string">"黎明"</span>), UserDao.Properties.Age.ge(<span class="number">10</span>));</div><div class="line">List&lt;User&gt; list= qb.list();</div></pre></td></tr></table></figure></p>
+<p>关于属性的一些操作</p>
+<ul>
+<li>eq：=</li>
+<li>notEq：&lt;&gt;</li>
+<li>like:LIKE</li>
+<li>between：BETWEEN … AND …</li>
+<li>in：IN (…, …, …)</li>
+<li>notIn：NOT IN (…, …, …)</li>
+<li>gt：&gt;</li>
+<li>lt：&lt;</li>
+<li>ge：&gt;=</li>
+<li>le：&lt;=</li>
+<li>isNull：IS NULL</li>
+<li>isNotNull：IS NOT NULL</li>
+</ul>
+<p>2.whereOr：条件查询 参数为逻辑或的关系（OR）</p>
+<p>查询姓名是黎明或者年龄&gt;=10的数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">QueryBuilder qb=userDao.queryBuilder();</div><div class="line">qb.whereOr(UserDao.Properties.Name.eq(<span class="string">"黎明"</span>), UserDao.Properties.Age.ge(<span class="number">10</span>));</div><div class="line">List&lt;User&gt; list= qb.list();</div></pre></td></tr></table></figure></p>
+<p>3.or：条件OR在where或者whereOr里面使用<br>4.and：条件AND在where或者whereOr里面使用<br>5.join：连表查询<br>6.orderAsc：升序<br>7.orderDesc 降序<br>8.limit：返回数据的条目个数<br>9.offset：偏移量，配合limit使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> page=<span class="number">0</span>;</div><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">QueryBuilder qb=userDao.queryBuilder();</div><div class="line">List&lt;User&gt; list = qb.offset(page*<span class="number">0</span>).limit(<span class="number">10</span>).list();</div></pre></td></tr></table></figure>
+<h2 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h2><p>Query类是一个能够执行多次的查询语句<br>还是上面的例子，查询姓名是黎明并且年龄&gt;=10<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = GreenDaoManager.getInstance().getmDaoSession().getUserDao();</div><div class="line">Query query=userDao.queryBuilder().where(UserDao.Properties.Name.eq(<span class="string">"黎明"</span>).build();</div><div class="line">List&lt;User&gt; list= qb.list();</div></pre></td></tr></table></figure></p>
+<p>然后我们改成查询姓名是小王的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">query.setParameter(<span class="number">0</span>, <span class="string">"小王"</span>);</div><div class="line">List&lt;User&gt; list= qb.list();</div></pre></td></tr></table></figure></p>
+<p>使用setParameter便可执行多次查询语句。</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>本期主要介绍的数据的基本操作，下期我们介绍数据集的升级问题。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝茶<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -261,65 +310,115 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/03/09/数据库greenDAO的使用-二-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/08/数据库greenDAO的使用-一/" class="archive-article-date">
-  	<time datetime="2017-03-08T09:34:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/08/数据库greenDAO的使用-一/">数据库greenDAO的使用（一）</a>
-    </h1>
+    <a href="/2017/03/10/数据库greenDAO的使用-三/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据库greenDAO的使用（三）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/08/数据库greenDAO的使用-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库greenDAO的使用（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="数据库greenDAO的使用-二-1" data-title="数据库greenDAO的使用（二）" data-url="//dongqing123.cn/2017/03/09/数据库greenDAO的使用-二-1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"dongqing123"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -354,9 +453,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

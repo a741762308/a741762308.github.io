@@ -168,20 +168,90 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-数据库greenDAO的使用-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据库greenDAO的使用-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/09/数据库greenDAO的使用-二/">数据库greenDAO的使用（二）</a>
+      <a class="article-title" href="/2017/03/10/数据库greenDAO的使用-三/">数据库greenDAO的使用（三）</a>
     </h1>
   
 
         
-        <a href="/2017/03/09/数据库greenDAO的使用-二/" class="archive-article-date">
-  	<time datetime="2017-03-09T06:14:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
+        <a href="/2017/03/10/数据库greenDAO的使用-三/" class="archive-article-date">
+  	<time datetime="2017-03-10T02:04:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="2017/03/09/数据库greenDAO的使用-二/">数据库greenDAO的使用（二）</a>介绍的数据库的基本操作，今天我们便介绍数据库升级的问题。<br>当我们的应用已投入使用，新版本中修改了表结构、或者增加了表，这时候我们就修改考虑数据库升级的问题了。<br>这是如果我们不修改数据库版本肯定会crash，但是仅仅只是修改版本的话是不行的。<br>查看DaoMaster代码发现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** WARNING: Drops all table on Upgrade! Use only during development. */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DevOpenHelper</span> <span class="keyword">extends</span> <span class="title">OpenHelper</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DevOpenHelper</span><span class="params">(Context context, String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DevOpenHelper</span><span class="params">(Context context, String name, CursorFactory factory)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(Database db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">        Log.i(<span class="string">"greenDAO"</span>, <span class="string">"Upgrading schema from version "</span> + oldVersion + <span class="string">" to "</span> + newVersion + <span class="string">" by dropping all tables"</span>);</div><div class="line">        dropAllTables(db, <span class="keyword">true</span>);</div><div class="line">        onCreate(db);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/10/数据库greenDAO的使用-三/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库greenDAO的使用-二-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/09/数据库greenDAO的使用-二-1/">数据库greenDAO的使用（二）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/09/数据库greenDAO的使用-二-1/" class="archive-article-date">
+  	<time datetime="2017-03-09T02:02:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
 </a>
         
       </header>
@@ -220,7 +290,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/09/数据库greenDAO的使用-二/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/09/数据库greenDAO的使用-二-1/">展开全文 >></a>
         </p>
       
 
@@ -442,72 +512,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/02/13/drakeet-MultiType的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-自定义Behavior（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/自定义Behavior（一）/">自定义Behavior（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/自定义Behavior（一）/" class="archive-article-date">
-  	<time datetime="2017-02-09T03:21:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><center><br>    <img src="http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2408307430.jpg" alt=""><br></center><br>在<a href="/2017/02/04/android-design库的使用（二）/">android design库的使用（二）</a>一文中我们使用了FloatingActionButton,它是android design给我们带来的一个悬浮button，我们可以通过它做许多许多的事情。Behavior是CoordinatorLayout带来的一个以非侵入的为View添加动态的依赖布局，和处理父布局(CoordinatorLayout)滑动手势的一系列回调，比如我们可以通过它实现动态隐藏于显示FloatingActionButton，实现类似于一个返回顶部的提示悬浮按钮。<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Behavior</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/自定义Behavior（一）/">展开全文 >></a>
         </p>
       
 
