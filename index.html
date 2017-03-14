@@ -168,6 +168,78 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库greenDAO的使用-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/13/数据库greenDAO的使用-四/">数据库greenDAO的使用（四）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/13/数据库greenDAO的使用-四/" class="archive-article-date">
+  	<time datetime="2017-03-13T09:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="/2017/03/10/数据库greenDAO的使用-三/">数据库greenDAO的使用（三）</a>我们介绍了greenDAO数据库的升级问题，并且自定义了数据库的路径，当时我们就提到放在sd卡上如何保证数据库的安全，今天我们就使用greenDAO的加密技术解决安全问题。<br>首先添加加密所需的依赖库<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">	...</div><div class="line">	compile <span class="string">'net.zetetic:android-database-sqlcipher:3.5.1'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们只需要简单的修改GreenDaoManager的init方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">    SQLiteOpenHelper devOpenHelper = <span class="keyword">new</span> SQLiteOpenHelper(<span class="keyword">new</span> GreenDaoContext(), <span class="string">"scale.db"</span>);</div><div class="line"><span class="comment">//    mDaoMaster = new DaoMaster(devOpenHelper.getWritableDatabase());</span></div><div class="line">    mDaoMaster=<span class="keyword">new</span> DaoMaster(devOpenHelper.getEncryptedWritableDb(<span class="string">"secret"</span>));</div><div class="line">    mDaoSession = mDaoMaster.newSession();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用getEncryptedWritableDb便可让数据库加密，参数为秘钥的字符串或字符数组。这样我们便看不到数据库里面的数据了。<br>到这里greenDAO的使用就全部结束了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/13/数据库greenDAO的使用-四/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-数据库greenDAO的使用-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -458,80 +530,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-drakeet-MultiType的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/13/drakeet-MultiType的使用/">drakeet MultiType的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/13/drakeet-MultiType的使用/" class="archive-article-date">
-  	<time datetime="2017-02-13T07:57:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们在日常使用recyclerview时，总会遇到各种比较复杂的布局，这时候仅仅是一个简单的item已经不能满足我们的要求，如何实现这些呢，目前主要有三种方式<br>1、嵌套<br>2、addView<br>3、使用type<br>这些方法虽然都可以实现我们想要的布局，但缺点都是比较明显的，耦合度特别大，每当我们需要修改时，不得不修改Adapter的内容，因此今天我们要谈一款能优雅、解耦的开源库来实现复杂的布局。<br>drakeet的MultiType就是为这而生的，其简单，高效，解耦的实现这些复杂的布局，地址传送门 <a href="https://github.com/drakeet/MultiType">MultiType</a>。MultiType的作者也详细的介绍了该库的如何使用<a href="https://github.com/drakeet/Effective-MultiType/blob/master/README.md">Effective-MultiType
-</a>,今天我们就针对具体的需求，如何使用该库。<br>很早之前就订阅了代码家的gank.io，一直很感谢大牛的无私奉献，每日为我们推送技术文章。因此最近使用代码家的api，开发了一款gank的客户端（应用宝：<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jsqix.dongqing.gank">干货Gank</a>），其中每日gank的数据是比较多的，涉及到Android、iOS、前端等多个领域。<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RecyclerView</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MultiType</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/13/drakeet-MultiType的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
