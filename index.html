@@ -168,6 +168,76 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-android-进程间通信之AIDL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/17/android-进程间通信之AIDL/">android 进程间通信之AIDL</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/17/android-进程间通信之AIDL/" class="archive-article-date">
+  	<time datetime="2017-03-17T08:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一直在想微信与支付宝这样的sdk是怎么做到支付回调的，明明是两个不同的apk，接口、StartActivityForResult什么的肯定是行不通的。忽然想到会不会使用了跨进程通信的机制，客户端给支付宝发送支付请求，支付宝通过回调将支付结果回传给客户端，从而实现连个apk支付的回调。<br>竟然是这么想的，就不如大胆的实践一下吧！<br>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AIDL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">进程通信</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/17/android-进程间通信之AIDL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-android动画-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -446,83 +516,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-数据库greenDAO的使用-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/08/数据库greenDAO的使用-一/">数据库greenDAO的使用（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/08/数据库greenDAO的使用-一/" class="archive-article-date">
-  	<time datetime="2017-03-08T09:34:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前我们介绍了数据库realm的使用，今天我们介绍一款ORM框架greenDAO的使用。<br>首先到查看github地址<a href="https://github.com/greenrobot/greenDAO">https://github.com/greenrobot/greenDAO</a> ，根据文档做相应的配置。<br>Gradle 插件配置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">greendao &#123;</div><div class="line">    schemaVersion <span class="number">1</span></div><div class="line">    daoPackage <span class="string">'com.greendao.gen'</span></div><div class="line">    targetGenDir <span class="string">'src/main/java'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>schemaVersion： 数据库schema版本，也可以理解为数据库版本号</li>
-<li>daoPackage：设置DaoMaster 、DaoSession、Dao包名</li>
-<li>targetGenDir：设置DaoMaster 、DaoSession、Dao目录</li>
-<li>targetGenDirTest：设置生成单元测试目录</li>
-<li>generateTests：设置自动生成单元测试用例</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/08/数据库greenDAO的使用-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -725,6 +718,14 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AIDL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进程通信</a>
               </li>
             
             <div class="clearfix"></div>
