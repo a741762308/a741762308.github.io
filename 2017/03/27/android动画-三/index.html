@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//dongqing123.cn">
-  <title>Tag: Android | 董庆的博客</title>
+  <title>android动画（三） | 董庆的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="合肥学院10级，Android码农一枚。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="董庆的博客">
-<meta property="og:url" content="//dongqing123.cn/tags/Android/index.html">
+  <meta name="description" content="上一篇android动画（二）我们介绍了属性动画的基本操作，介绍了ObjectAnimator、ValueAnimator、AnimatorSet等动画的操作的使用，顺便介绍了对于view的ViewProperty动画。
+TypeEvaluator上一篇我们遗漏了ofObject，主要是涉及到TypeEvaluator的使用，该类主要是如何从初始值过渡到结束值。我们知道ofInt、ofFloat内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android动画（三）">
+<meta property="og:url" content="//dongqing123.cn/2017/03/27/android动画-三/index.html">
 <meta property="og:site_name" content="董庆的博客">
-<meta property="og:description" content="合肥学院10级，Android码农一枚。">
+<meta property="og:description" content="上一篇android动画（二）我们介绍了属性动画的基本操作，介绍了ObjectAnimator、ValueAnimator、AnimatorSet等动画的操作的使用，顺便介绍了对于view的ViewProperty动画。
+TypeEvaluator上一篇我们遗漏了ofObject，主要是涉及到TypeEvaluator的使用，该类主要是如何从初始值过渡到结束值。我们知道ofInt、ofFloat内">
+<meta property="og:updated_time" content="2017-03-27T08:17:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="董庆的博客">
-<meta name="twitter:description" content="合肥学院10级，Android码农一枚。">
+<meta name="twitter:title" content="android动画（三）">
+<meta name="twitter:description" content="上一篇android动画（二）我们介绍了属性动画的基本操作，介绍了ObjectAnimator、ValueAnimator、AnimatorSet等动画的操作的使用，顺便介绍了对于view的ViewProperty动画。
+TypeEvaluator上一篇我们遗漏了ofObject，主要是涉及到TypeEvaluator的使用，该类主要是如何从初始值过渡到结束值。我们知道ofInt、ofFloat内">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -166,36 +170,80 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-android动画-三" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      android动画（三）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/27/android动画-三/" class="archive-article-date">
+
+        
+        <a href="/2017/03/27/android动画-三/" class="archive-article-date">
   	<time datetime="2017-03-27T08:17:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/27/android动画-三/">android动画（三）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="/2017/03/24/android动画-二/">android动画（二）</a>我们介绍了属性动画的基本操作，介绍了ObjectAnimator、ValueAnimator、AnimatorSet等动画的操作的使用，顺便介绍了对于view的ViewProperty动画。</p>
+<h2 id="TypeEvaluator"><a href="#TypeEvaluator" class="headerlink" title="TypeEvaluator"></a>TypeEvaluator</h2><p>上一篇我们遗漏了ofObject，主要是涉及到TypeEvaluator的使用，该类主要是如何从初始值过渡到结束值。<br>我们知道ofInt、ofFloat内部就使用的IntEvaluator和FloatEvaluator，源码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntEvaluator</span> <span class="keyword">implements</span> <span class="title">TypeEvaluator</span>&lt;<span class="title">Integer</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">evaluate</span><span class="params">(<span class="keyword">float</span> fraction, Integer startValue, Integer endValue)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> startInt = startValue;</div><div class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)(startInt + fraction * (endValue - startInt));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FloatEvaluator</span> <span class="keyword">implements</span> <span class="title">TypeEvaluator</span>&lt;<span class="title">Number</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">evaluate</span><span class="params">(<span class="keyword">float</span> fraction, Number startValue, Number endValue)</span> </span>&#123;</div><div class="line">        <span class="keyword">float</span> startFloat = startValue.floatValue();</div><div class="line">        <span class="keyword">return</span> startFloat + fraction * (endValue.floatValue() - startFloat);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>源码很简单，第一个参数fraction表示动画的进度，后面两个一个是初始值，一个是结束值，逻辑代码比较简单就是初始值加上进度乘以结束值减初始值。<br>那么我们在使用ofObject时需要自己实现一个TypeEvaluator。<br>下面我们举个例子说明，比如我们需要改变textview字体的颜色<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorEvaluator</span> <span class="keyword">implements</span> <span class="title">TypeEvaluator</span>&lt;<span class="title">Integer</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">evaluate</span><span class="params">(<span class="keyword">float</span> fraction, Integer startValue, Integer endValue)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> startA = (startValue &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xfff</span>;<span class="comment">//透明度</span></div><div class="line">        <span class="keyword">int</span> startR = (startValue &gt;&gt; <span class="number">18</span>) &amp; <span class="number">0xfff</span>;<span class="comment">//Red</span></div><div class="line">        <span class="keyword">int</span> startG = (startValue &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0xfff</span>;<span class="comment">//Green</span></div><div class="line">        <span class="keyword">int</span> startB = startValue &amp; <span class="number">0xfff</span>;<span class="comment">//Blue</span></div><div class="line">        <span class="keyword">int</span> endA = (endValue &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xfff</span>;<span class="comment">//透明度</span></div><div class="line">        <span class="keyword">int</span> endR = (endValue &gt;&gt; <span class="number">18</span>) &amp; <span class="number">0xfff</span>;<span class="comment">//Red</span></div><div class="line">        <span class="keyword">int</span> endG = (endValue &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0xfff</span>;<span class="comment">//Green</span></div><div class="line">        <span class="keyword">int</span> endB = endValue &amp; <span class="number">0xfff</span>;<span class="comment">//Blue</span></div><div class="line">        <span class="keyword">return</span> (startA + (<span class="keyword">int</span>) (fraction * (endA - startA)) &lt;&lt; <span class="number">24</span>) |</div><div class="line">                (startR + (<span class="keyword">int</span>) (fraction * (endR - startR)) &lt;&lt; <span class="number">16</span>) |</div><div class="line">                (startG + (<span class="keyword">int</span>) (fraction * (endG - startG)) &lt;&lt; <span class="number">8</span>) |</div><div class="line">                (startB + (<span class="keyword">int</span>) (fraction * (endB - startB)));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后我们便可以使用ofObject设置动画了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ValueAnimator animator=ValueAnimator.ofObject(<span class="keyword">new</span> ColorEvaluator(), Color.RED,Color.BLUE);</div><div class="line">animator.setDuration(<span class="number">2000</span>);</div><div class="line">animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator valueAnimator)</span> </span>&#123;</div><div class="line">        textView.setTextColor((Integer) valueAnimator.getAnimatedValue());</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">animator.start();</div></pre></td></tr></table></figure></p>
+<p>当然在api版本21中我们可以使用ofArgb()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ValueAnimator animator=ValueAnimator.ofArgb(Color.RED,Color.BLUE);</div><div class="line">animator.setDuration(<span class="number">2000</span>);</div><div class="line">animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator valueAnimator)</span> </span>&#123;</div><div class="line">        textView.setTextColor((<span class="keyword">int</span>) valueAnimator.getAnimatedValue());</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">animator.start();</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ObjectAnimator animator=ObjectAnimator.ofArgb(textView,<span class="string">"textColor"</span>,Color.RED,Color.BLUE);</div><div class="line">animator.setDuration(<span class="number">2000</span>);</div><div class="line">animator.start();</div></pre></td></tr></table></figure></p>
+<p>我们知道ofArgb内部使用的是ArgbEvaluator，发现其内部源码就是我们写的ColorEvaluator（当然这里是我拷贝的人家的代码）。因此我们便实现通过TypeEvaluator实现一些复杂的动画，详情可以参考<a href="http://blog.csdn.net/guolin_blog/article/details/43816093" target="_blank" rel="external">郭霖</a>大神相关的文章。</p>
+<h2 id="TimeInterpolate"><a href="#TimeInterpolate" class="headerlink" title="TimeInterpolate"></a>TimeInterpolate</h2><p>插值器我们在<a href="/2017/03/15/android动画-一/">android动画（一）</a>补间动画中有简单的介绍系统的自带插值器，它主要用于控制动画的变化速率类似于物理上加速度，系统默认插值器是AccelerateDecelerateInterpolator，是中间较快，两端较慢，也就是先加速或减速。<br>查看源码我们发现AccelerateDecelerateInterpolator继承BaseInterpolator，BaseInterpolator则是实现Interpolator，Interpolator继承了TimeInterpolator。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TimeInterpolator</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">float</span> <span class="title">getInterpolation</span><span class="params">(<span class="keyword">float</span> input)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接口很简单只有一个getInterpolation，参数是float返回一个float，input这个值随动画的运行不断变化，不过它的范围是0-1，也就是初值0，终值1，匀速递增。在TypeEvaluator曾有个表示动画的进度fraction参数，其实它就是这里的返回值。<br>android自带了一个LinearInterpolator，我们查看他的源码发现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinearInterpolator</span> <span class="keyword">extends</span> <span class="title">BaseInterpolator</span> ...</span>&#123;</div><div class="line">	...</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getInterpolation</span><span class="params">(<span class="keyword">float</span> input)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> input;</div><div class="line">    &#125;</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>它没有做任何的处理直接返回了input，也就是input与fraction值是相同的。因此动画便做匀速运动。对于AccelerateDecelerateInterpolator则返回的是一个余弦函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getInterpolation</span><span class="params">(<span class="keyword">float</span> input)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">float</span>)(Math.cos((input + <span class="number">1</span>) * Math.PI) / <span class="number">2.0f</span>) + <span class="number">0.5f</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>对三角函数有一定了解的就会知道是cos函数在[π，2π]的一段，大家观看函数图像就明白了  。<br>AccelerateInterpolator是指数函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getInterpolation</span><span class="params">(<span class="keyword">float</span> input)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mFactor == <span class="number">1.0f</span>) &#123;</div><div class="line">        <span class="keyword">return</span> input * input;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> (<span class="keyword">float</span>)Math.pow(input, mDoubleFactor);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然我们也可以同理分析其他的插值器，如果系统自带的满足不了我们的要求，我们可以自定义插值器，重写getInterpolation便可以了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>本期作为android动画的最后一期介绍了TypeEvaluator和TimeInterpolate相关的内容，这部分算是android动画的高级部分，通过自定义完成我们现实项目中需求。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝茶<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -211,199 +259,106 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/03/27/android动画-三/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/24/android动画-二/" class="archive-article-date">
-  	<time datetime="2017-03-24T06:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-24</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/24/android动画-二/">android动画（二）</a>
-    </h1>
+  
+    <a href="/2017/03/24/android动画-二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">android动画（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="android动画-三" data-title="android动画（三）" data-url="//dongqing123.cn/2017/03/27/android动画-三/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"dongqing123"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">动画</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/17/android-进程间通信之AIDL/" class="archive-article-date">
-  	<time datetime="2017-03-17T08:35:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/17/android-进程间通信之AIDL/">android 进程间通信之AIDL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AIDL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">进程通信</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/15/android动画-一/" class="archive-article-date">
-  	<time datetime="2017-03-15T08:36:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/15/android动画-一/">android动画（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">动画</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/13/数据库greenDAO的使用-四/" class="archive-article-date">
-  	<time datetime="2017-03-13T09:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/13/数据库greenDAO的使用-四/">数据库greenDAO的使用（四）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/Android/page/2/">2</a><a class="page-number" href="/tags/Android/page/3/">3</a><a class="page-number" href="/tags/Android/page/4/">4</a><a class="extend next" rel="next" href="/tags/Android/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -438,9 +393,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
