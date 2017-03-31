@@ -8,16 +8,22 @@
   <link rel="dns-prefetch" href="//dongqing123.cn">
   <title>android矩阵Matrix | 董庆的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="\begin{bmatrix}scale_x&amp;amp; ske_x &amp;amp; trans_x \skew_y &amp;amp; scale_y &amp;amp; trans_y \perep_0 &amp;amp; persp_1 &amp;amp; persp_2\end{bmatrix}">
+  <meta name="description" content="Matrix 矩阵，在高等代数或高等数学中有介绍，在安卓方面主要用于图像处理，通过一系列的矩阵运算实现平移、旋转、缩放等操作。在android中Matrix是一个3行3列的方阵\begin{bmatrix}scale_x &amp;amp; skew_x &amp;amp; trans_x \\skew_y &amp;amp; scale_y &amp;amp; trans_y \\perep_0 &amp;amp; persp_1 &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android矩阵Matrix">
-<meta property="og:url" content="//dongqing123.cn/2017/03/29/android矩阵Matrix/index.html">
+<meta property="og:url" content="//dongqing123.cn/2017/03/30/android矩阵Matrix/index.html">
 <meta property="og:site_name" content="董庆的博客">
-<meta property="og:description" content="\begin{bmatrix}scale_x&amp;amp; ske_x &amp;amp; trans_x \skew_y &amp;amp; scale_y &amp;amp; trans_y \perep_0 &amp;amp; persp_1 &amp;amp; persp_2\end{bmatrix}">
-<meta property="og:updated_time" content="2017-03-29T14:08:42.000Z">
+<meta property="og:description" content="Matrix 矩阵，在高等代数或高等数学中有介绍，在安卓方面主要用于图像处理，通过一系列的矩阵运算实现平移、旋转、缩放等操作。在android中Matrix是一个3行3列的方阵\begin{bmatrix}scale_x &amp;amp; skew_x &amp;amp; trans_x \\skew_y &amp;amp; scale_y &amp;amp; trans_y \\perep_0 &amp;amp; persp_1 &amp;">
+<meta property="og:image" content="//dongqing123.cn/images/matrix-1.png">
+<meta property="og:image" content="//dongqing123.cn/images/matrix-2.png">
+<meta property="og:image" content="//dongqing123.cn/images/matrix-3.png">
+<meta property="og:image" content="//dongqing123.cn/images/matrix-4.png">
+<meta property="og:image" content="//dongqing123.cn/images/matrix-5.png">
+<meta property="og:updated_time" content="2017-03-31T02:47:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android矩阵Matrix">
-<meta name="twitter:description" content="\begin{bmatrix}scale_x&amp;amp; ske_x &amp;amp; trans_x \skew_y &amp;amp; scale_y &amp;amp; trans_y \perep_0 &amp;amp; persp_1 &amp;amp; persp_2\end{bmatrix}">
+<meta name="twitter:description" content="Matrix 矩阵，在高等代数或高等数学中有介绍，在安卓方面主要用于图像处理，通过一系列的矩阵运算实现平移、旋转、缩放等操作。在android中Matrix是一个3行3列的方阵\begin{bmatrix}scale_x &amp;amp; skew_x &amp;amp; trans_x \\skew_y &amp;amp; scale_y &amp;amp; trans_y \\perep_0 &amp;amp; persp_1 &amp;">
+<meta name="twitter:image" content="//dongqing123.cn/images/matrix-1.png">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -181,15 +187,116 @@ var _hmt = _hmt || [];
   
 
         
-        <a href="/2017/03/29/android矩阵Matrix/" class="archive-article-date">
-  	<time datetime="2017-03-29T09:43:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
+        <a href="/2017/03/30/android矩阵Matrix/" class="archive-article-date">
+  	<time datetime="2017-03-30T02:40:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>\begin{bmatrix}<br>scale_x&amp; ske_x &amp; trans_x \<br>skew_y &amp; scale_y &amp; trans_y \<br>perep_0 &amp; persp_1 &amp; persp_2<br>\end{bmatrix}</p>
+        <p>Matrix 矩阵，在高等代数或高等数学中有介绍，在安卓方面主要用于图像处理，通过一系列的矩阵运算实现平移、旋转、缩放等操作。在android中Matrix是一个3行3列的方阵<br>\begin{bmatrix}<br>scale_x &amp; skew_x &amp; trans_x \\<br>skew_y &amp; scale_y &amp; trans_y \\<br>perep_0 &amp; persp_1 &amp; persp_2<br>\end{bmatrix}<br>代表了如下含义 scale是缩放，skew是错切，trans是平移，presp是透视，我们把这个方阵分为4个部分，左上角的2x2的方阵$\begin{pmatrix} scale_x &amp; skew_x \\ skew_y &amp;scale_y \end{pmatrix}$ 右上角2x1的矩阵$\begin{pmatrix} trans_x \\trans_y \end{pmatrix}$ 左下角1x2的矩阵$\begin{pmatrix} persp_0 &amp;persp_1 \end{pmatrix}$ 右下角的1x1的方阵$\begin{pmatrix} persp_2 \end{pmatrix}$各大区域的作用我们稍后讲解</p>
+<a id="more"></a>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>手机屏幕上出了x轴y轴外，还有z轴代表物体离我们的远近，默认是1代表不缩放，用矩阵表示$\begin{pmatrix} x\\ y\\ 1\end{pmatrix}$<br>现在我们来看矩阵是如何起作用的下面以坐标旋转为例</p>
+<p><center><br><img src="/images/matrix-1.png" alt=""><br></center><br>不难看出<br>$x_0=rcosα$<br>$y_0=rsinα$<br>$x=rcos(α+θ)=rcosαcosθ-rsinαsinθ=x_0cosθ-y_0sinθ$<br>$y=rsin(α+θ)=rsinαcosθ+rcosαsinθ=y_0cosθ+x_0sinθ$<br>换成矩阵便是<br>$\begin{Bmatrix} x \\y \\1\end{Bmatrix}=\begin{Bmatrix} cosθ &amp; -sinθ &amp; 0 \\sinθ &amp; cosθ &amp; 0 \\0 &amp; 0 &amp; 1\end{Bmatrix}\begin{Bmatrix} x_0 \\y_0 \\1\end{Bmatrix}$</p>
+<p>可以看出矩阵的4块切分也是有矩阵乘法运算决定的，由于左上角的四个值可以和x，y做乘法运算，所以可以影响到旋转操作，而右上角只能做加法，所以只影响到平移，右下角是管z轴的，自然就是进行缩放操作了，左下角一般不管它。</p>
+<h2 id="Matrix-基本操作方法"><a href="#Matrix-基本操作方法" class="headerlink" title="Matrix 基本操作方法"></a>Matrix 基本操作方法</h2><ol>
+<li>构造方法<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Matrix</span><span class="params">()</span></span></div><div class="line"><span class="keyword">public</span> <span class="title">Matrix</span><span class="params">(Matrix src)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>两个构造方法，第一个产生一个单位阵，第二个根据提供的矩阵创建有个矩阵</p>
+<ol>
+<li>isIdentity与isAffine<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIdentity</span><span class="params">()</span>    <span class="comment">//是否是单位阵</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAffine</span><span class="params">()</span>      <span class="comment">//是否为放射阵</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>单位阵大家都知道，放射阵可能不大了解，首先来看什么是放射变化，仿射变换其实就是二维坐标到二维坐标的线性变换，可以通过一系列的原子变换的复合来实现，原子变换就包括：平移、缩放、翻转、旋转和错切，所以，只要最后一行是0,0,1则是仿射矩阵。</p>
+<ol>
+<li>rectStaysRect<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">rectStaysRect</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>否可以将一个矩形依然变换为一个矩形，当矩阵是单位矩阵，或者只进行平移，缩放，以及旋转90度的倍数的时候，返回true。</p>
+<ol>
+<li>reset<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reset</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>重置矩阵为单位矩阵。</p>
+<ol>
+<li>setTranslate<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTranslate</span><span class="params">(<span class="keyword">float</span> dx, <span class="keyword">float</span> dy)</span></span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>设置平移，参数分别是x，y上的平移量</p>
+<ol>
+<li>setScale<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScale</span><span class="params">(<span class="keyword">float</span> sx, <span class="keyword">float</span> sy, <span class="keyword">float</span> px, <span class="keyword">float</span> py)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScale</span><span class="params">(<span class="keyword">float</span> sx, <span class="keyword">float</span> sy)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>设置缩放，sx，sy代表了缩放的倍数，px,py代表缩放的中心</p>
+<ol>
+<li>setRotate<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRotate</span><span class="params">(<span class="keyword">float</span> degrees, <span class="keyword">float</span> px, <span class="keyword">float</span> py)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRotate</span><span class="params">(<span class="keyword">float</span> degrees)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>设置旋转，degrees旋转角度，px,py代表旋转的中心</p>
+<ol>
+<li>setSinCos<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSinCos</span><span class="params">(<span class="keyword">float</span> sinValue, <span class="keyword">float</span> cosValue, <span class="keyword">float</span> px, <span class="keyword">float</span> py)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSinCos</span><span class="params">(<span class="keyword">float</span> sinValue, <span class="keyword">float</span> cosValue)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>咋一看比较懵逼，其实就是上面坐标旋转的例子，<br>$\begin{Bmatrix} x \\y \\1\end{Bmatrix}=\begin{Bmatrix} cosθ &amp; -sinθ &amp; 0 \\sinθ &amp; cosθ &amp; 0 \\0 &amp; 0 &amp; 1\end{Bmatrix}\begin{Bmatrix} x_0 \\y_0 \\1\end{Bmatrix}$<br>sinValue对应sin值，cosValue对应cos值，px，py为中心坐标</p>
+<ol>
+<li>setSkew<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSkew</span><span class="params">(<span class="keyword">float</span> kx, <span class="keyword">float</span> ky, <span class="keyword">float</span> px, <span class="keyword">float</span> py)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSkew</span><span class="params">(<span class="keyword">float</span> kx, <span class="keyword">float</span> ky)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>错切，kx，ky分别代表了x，y上的错切因子，px，py代表了错切的中心</p>
+<ol>
+<li>setConcat<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">setConcat</span><span class="params">(Matrix a,Matrix b)</span></span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>当前matrix的值能否变为a和b的乘积<br>11.setRectToRect<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">setRectToRect</span><span class="params">(RectF src, RectF dst, ScaleToFit stf)</span></span></div></pre></td></tr></table></figure></p>
+<p>将rect变换成rec，ScaleToFit 有如下四个值</p>
+<ul>
+<li>FILL 可能会变换矩形的长宽比，保证变换和目标矩阵长宽一致</li>
+<li>START 保持坐标变换前矩形的长宽比，并最大限度的填充变换后的矩形。至少有一边和目标矩形重叠。左上对齐</li>
+<li>CENTER 保持坐标变换前矩形的长宽比，并最大限度的填充变换后的矩形。至少有一边和目标矩形重叠</li>
+<li>END 保持坐标变换前矩形的长宽比，并最大限度的填充变换后的矩形。至少有一边和目标矩形重叠。右下对齐<br>12.setPolyToPoly<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">setPolyToPoly</span><span class="params">(<span class="keyword">float</span>[] src, <span class="keyword">int</span> srcIndex, <span class="keyword">float</span>[] dst, <span class="keyword">int</span> dstIndex, <span class="keyword">int</span> pointCount)</span></span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通过指定的0-4个点，原始坐标以及变化后的坐标，来得到一个变换矩阵。如果指定0个点则没有效果</p>
+<ol>
+<li>一个点——平移<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">float</span>[] src = &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">int</span> DX = <span class="number">300</span>;</div><div class="line"><span class="keyword">float</span>[] dst = &#123;<span class="number">0</span> + DX, <span class="number">0</span> + DX&#125;;</div><div class="line">matrix.setPolyToPoly(src, <span class="number">0</span>, dst, <span class="number">0</span>, <span class="number">1</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>水平、垂直移动300像素</p>
+<ol>
+<li>两个点——旋转或缩放<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> bw = bitmap.getWidth();</div><div class="line"><span class="keyword">int</span> bh = bitmap.getHeight();</div><div class="line"><span class="keyword">float</span>[] src = &#123;bw / <span class="number">2</span>, bh / <span class="number">2</span>, bw, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">float</span>[] dst = &#123;bw / <span class="number">2</span>, bh / <span class="number">2</span>, bw / <span class="number">2</span> + bh / <span class="number">2</span>, bh / <span class="number">2</span> + bw / <span class="number">2</span>&#125;;</div><div class="line">matrix.setPolyToPoly(src, <span class="number">0</span>, dst, <span class="number">0</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/images/matrix-2.png" alt=""></p>
+<p>旋转90度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> bw = bitmap.getWidth();</div><div class="line"><span class="keyword">int</span> bh = bitmap.getHeight();</div><div class="line"><span class="keyword">float</span>[] src = &#123;bw / <span class="number">2</span>, bh / <span class="number">2</span>, bw, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">float</span>[] dst = &#123;bw / <span class="number">2</span>, bh / <span class="number">2</span>, bw * <span class="number">3</span> / <span class="number">4</span>, bh / <span class="number">4</span>&#125;;</div><div class="line">matrix.setPolyToPoly(src, <span class="number">0</span>, dst, <span class="number">0</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure>
+<p><img src="/images/matrix-3.png" alt=""><br>缩放为原来一半</p>
+<ol>
+<li>三个点——错切<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"><span class="keyword">int</span> bw = bitmap.getWidth();</div><div class="line"><span class="keyword">int</span> bh = bitmap.getHeight();</div><div class="line"><span class="keyword">float</span>[] src = &#123;<span class="number">0</span>,<span class="number">0</span>, <span class="number">0</span>, bh,bw,bh&#125;;</div><div class="line"><span class="keyword">float</span>[] dst = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, bh-<span class="number">100</span>, bw + <span class="number">200</span>, bh-<span class="number">100</span>&#125;;</div><div class="line">matrix.setPolyToPoly(src, <span class="number">0</span>, dst, <span class="number">0</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/images/matrix-4.png" alt=""></p>
+<ol>
+<li>四个点——透视<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"><span class="keyword">int</span> bw = bitmap.getWidth();</div><div class="line"><span class="keyword">int</span> bh = bitmap.getHeight();</div><div class="line"><span class="keyword">float</span>[] src = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, bh, bw, bh, bw, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">float</span>[] dst = &#123;<span class="number">100</span>, <span class="number">100</span>, <span class="number">0</span>, bh, bw, bh, bw - <span class="number">100</span>, <span class="number">100</span>&#125;;</div><div class="line">matrix.setPolyToPoly(src, <span class="number">0</span>, dst, <span class="number">0</span>, <span class="number">4</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/images/matrix-5.png" alt=""><br>13.invert<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">invert</span><span class="params">(Matrix inverse)</span></span></div></pre></td></tr></table></figure></p>
+<p>如果能反转就返回true并将反转后的值写入inverse，否则返回false。当前矩阵*inverse=单位矩阵</p>
+<p>反转之后，其实是对效果的一种反转<br>14.mapPoints<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mapPoints</span><span class="params">(<span class="keyword">float</span>[] dst, <span class="keyword">int</span> dstIndex, <span class="keyword">float</span>[] src, <span class="keyword">int</span> srcIndex,<span class="keyword">int</span> pointCount)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mapPoints</span><span class="params">(<span class="keyword">float</span>[] dst, <span class="keyword">float</span>[] src)</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mapPoints</span><span class="params">(<span class="keyword">float</span>[] pts)</span></div></pre></td></tr></table></figure></p>
+<p>映射点的值到指定的数组中，这个方法可以在矩阵变换以后，给出指定点的值<br>dst：指定写入的数组<br>dstIndex：写入的起始索引，x，y两个坐标算作一对<br>src：指定要计算的点<br>srcIndex：要计算的点的索引<br>pointCount：需要计算的点的个数，每个点有两个值，x和y。<br>15.mapVectors<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mapVectors</span><span class="params">(<span class="keyword">float</span>[] dst, <span class="keyword">int</span> dstIndex, <span class="keyword">float</span>[] src, <span class="keyword">int</span> srcIndex,<span class="keyword">int</span> vectorCount)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mapVectors</span><span class="params">(<span class="keyword">float</span>[] dst, <span class="keyword">float</span>[] src)</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mapVectors</span><span class="params">(<span class="keyword">float</span>[] vecs)</span></div></pre></td></tr></table></figure></p>
+<p>src中指定的矩形的左上角和右下角的两个点的坐标，写入dst中。<br>16.mapRect<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">mapRect</span><span class="params">(RectF dst, RectF src)</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">mapRect</span><span class="params">(RectF rect)</span></div></pre></td></tr></table></figure></p>
+<p>17.mapRadius<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">mapRadius</span><span class="params">(<span class="keyword">float</span> radius)</span></span></div></pre></td></tr></table></figure></p>
+<p>返回一个圆圈半径的平均值，将matrix作用于一个指定radius半径的圆，随后返回的平均半径</p>
+<h2 id="进阶方法"><a href="#进阶方法" class="headerlink" title="进阶方法"></a>进阶方法</h2><p>上面有关变换的set方法设置后可以带来不同的效果，但是新的会覆盖掉以前的，也就是先后调用setTranslate、setScale，生效的是setScale，那么怎么才能同时生效呢。主要通过以下两种方法</p>
+<ul>
+<li>preXXX 前乘</li>
+<li>postXXX 后乘<br>我们知道矩阵是不满足交换律的，因此前乘与后乘差别很大的<br>举例说明<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Matrix matrix=<span class="keyword">new</span> Matrix();</div><div class="line">matrix.setTranslate(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">matrix.preScale(<span class="number">0.5f</span>,<span class="number">0.5f</span>);</div><div class="line">System.out.print(matrix.toString());</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可以看到结果是$\begin{matrix} 0.5 &amp;0 &amp;100 \\ 0 &amp; 0.5 &amp; 100 \\ 0 &amp; 0 &amp; 1 \end{matrix}$，其实是这么算的，前乘就代表Matrix在前面<br>$$\begin{vmatrix} 1 &amp; 0 &amp; 100 \\ 0 &amp; 1 &amp; 100 \\ 0 &amp; 0 &amp; 1 \end{vmatrix} \times \begin{vmatrix} 0.5 &amp; 0 &amp; 0 \\ 0 &amp; 0.5 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{vmatrix}=\begin{vmatrix} 0.5 &amp;0 &amp;100 \\ 0 &amp; 0.5 &amp; 100 \\ 0 &amp; 0 &amp; 1 \end{vmatrix}$$<br>那么后乘结果当然就不一样了，矩阵的位置发生了变化<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Matrix matrix=<span class="keyword">new</span> Matrix();</div><div class="line">matrix.setTranslate(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">matrix.postScale(<span class="number">0.5f</span>,<span class="number">0.5f</span>);</div><div class="line">System.out.print(matrix.toString());</div></pre></td></tr></table></figure></p>
+<p>$$\begin{vmatrix} 0.5 &amp; 0 &amp; 0 \\ 0 &amp; 0.5 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{vmatrix} \times \begin{vmatrix} 1 &amp; 0 &amp; 100 \\ 0 &amp; 1 &amp; 100 \\ 0 &amp; 0 &amp; 1 \end{vmatrix}=\begin{vmatrix} 0.5 &amp;0 &amp; 50 \\ 0 &amp; 0.5 &amp; 100 \\ 0 &amp; 0 &amp; 1 \end{vmatrix}$$</p>
+<p>明显发觉水平平移少了一半，因此在使用过程中，要注意前乘与后乘的区别，不然可能达不到想要的效果。</p>
 
       
 
@@ -294,7 +401,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/03/29/android矩阵Matrix/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing123.cn/2017/03/30/android矩阵Matrix/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,7 +431,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="android矩阵Matrix" data-title="android矩阵Matrix" data-url="//dongqing123.cn/2017/03/29/android矩阵Matrix/"></div>
+	<div class="ds-thread" data-thread-key="android矩阵Matrix" data-title="android矩阵Matrix" data-url="//dongqing123.cn/2017/03/30/android矩阵Matrix/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
