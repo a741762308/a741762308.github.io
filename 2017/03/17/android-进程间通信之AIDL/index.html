@@ -5,23 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="//dongqing.website">
+  <link rel="dns-prefetch" href="//dongqing.me">
   <title>android 进程间通信之AIDL | 董庆的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近一直在想微信与支付宝这样的sdk是怎么做到支付回调的，明明是两个不同的apk，接口、StartActivityForResult什么的肯定是行不通的。忽然想到会不会使用了跨进程通信的机制，客户端给支付宝发送支付请求，支付宝通过回调将支付结果回传给客户端，从而实现连个apk支付的回调。竟然是这么想的，就不如大胆的实践一下吧！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android 进程间通信之AIDL">
-<meta property="og:url" content="//dongqing.website/2017/03/17/android-进程间通信之AIDL/index.html">
+<meta property="og:url" content="//dongqing.me/2017/03/17/android-进程间通信之AIDL/index.html">
 <meta property="og:site_name" content="董庆的博客">
 <meta property="og:description" content="最近一直在想微信与支付宝这样的sdk是怎么做到支付回调的，明明是两个不同的apk，接口、StartActivityForResult什么的肯定是行不通的。忽然想到会不会使用了跨进程通信的机制，客户端给支付宝发送支付请求，支付宝通过回调将支付结果回传给客户端，从而实现连个apk支付的回调。竟然是这么想的，就不如大胆的实践一下吧！">
-<meta property="og:image" content="//dongqing.website/images/aidl-1.png">
-<meta property="og:image" content="//dongqing.website/images/aidl-2.png">
-<meta property="og:image" content="//dongqing.website/images/aidl.gif">
+<meta property="og:image" content="//dongqing.me/images/aidl-1.png">
+<meta property="og:image" content="//dongqing.me/images/aidl-2.png">
+<meta property="og:image" content="//dongqing.me/images/aidl.gif">
 <meta property="og:updated_time" content="2017-03-17T08:35:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android 进程间通信之AIDL">
 <meta name="twitter:description" content="最近一直在想微信与支付宝这样的sdk是怎么做到支付回调的，明明是两个不同的apk，接口、StartActivityForResult什么的肯定是行不通的。忽然想到会不会使用了跨进程通信的机制，客户端给支付宝发送支付请求，支付宝通过回调将支付结果回传给客户端，从而实现连个apk支付的回调。竟然是这么想的，就不如大胆的实践一下吧！">
-<meta name="twitter:image" content="//dongqing.website/images/aidl-1.png">
+<meta name="twitter:image" content="//dongqing.me/images/aidl-1.png">
   
     <link rel="alternative" href="/atom.xml" title="董庆的博客" type="application/atom+xml">
   
@@ -42,7 +42,7 @@
 var _hmt = _hmt || [];
 (function() {
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?cd737cbac088df7bc01cbccd770b2227";
+	hm.src = "https://hm.baidu.com/hm.js?7a964e13dbfa0a5cf0f45ae66a7fbfe4";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
@@ -315,7 +315,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing.website/2017/03/17/android-进程间通信之AIDL/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dongqing.me/2017/03/17/android-进程间通信之AIDL/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -352,17 +352,6 @@ var _hmt = _hmt || [];
 
   
   
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "//dongqing.website/2017/03/17/android-进程间通信之AIDL/", 
-    sourceId: "android-进程间通信之AIDL",
-    productKey: "fe4a8ecbb63c4955af450144086cb504",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
   
