@@ -168,6 +168,209 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库greenDAO的使用-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/13/数据库greenDAO的使用-四/">数据库greenDAO的使用（四）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/13/数据库greenDAO的使用-四/" class="archive-article-date">
+  	<time datetime="2017-03-13T09:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="/2017/03/10/数据库greenDAO的使用-三/">数据库greenDAO的使用（三）</a>我们介绍了greenDAO数据库的升级问题，并且自定义了数据库的路径，当时我们就提到放在sd卡上如何保证数据库的安全，今天我们就使用greenDAO的加密技术解决安全问题。<br>首先添加加密所需的依赖库<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">	...</div><div class="line">	compile <span class="string">'net.zetetic:android-database-sqlcipher:3.5.1'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们只需要简单的修改GreenDaoManager的init方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">    SQLiteOpenHelper devOpenHelper = <span class="keyword">new</span> SQLiteOpenHelper(<span class="keyword">new</span> GreenDaoContext(), <span class="string">"scale.db"</span>);</div><div class="line"><span class="comment">//    mDaoMaster = new DaoMaster(devOpenHelper.getWritableDatabase());</span></div><div class="line">    mDaoMaster=<span class="keyword">new</span> DaoMaster(devOpenHelper.getEncryptedWritableDb(<span class="string">"secret"</span>));</div><div class="line">    mDaoSession = mDaoMaster.newSession();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用getEncryptedWritableDb便可让数据库加密，参数为秘钥的字符串或字符数组。这样我们便看不到数据库里面的数据了。<br>到这里greenDAO的使用就全部结束了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/13/数据库greenDAO的使用-四/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-数据库greenDAO的使用-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/数据库greenDAO的使用-三/">数据库greenDAO的使用（三）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/10/数据库greenDAO的使用-三/" class="archive-article-date">
+  	<time datetime="2017-03-10T02:04:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="2017/03/09/数据库greenDAO的使用-二/">数据库greenDAO的使用（二）</a>介绍的数据库的基本操作，今天我们便介绍数据库升级的问题。<br>当我们的应用已投入使用，新版本中修改了表结构、或者增加了表，这时候我们就修改考虑数据库升级的问题了。<br>这是如果我们不修改数据库版本肯定会crash，但是仅仅只是修改版本的话是不行的。<br>查看DaoMaster代码发现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** WARNING: Drops all table on Upgrade! Use only during development. */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DevOpenHelper</span> <span class="keyword">extends</span> <span class="title">OpenHelper</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DevOpenHelper</span><span class="params">(Context context, String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DevOpenHelper</span><span class="params">(Context context, String name, CursorFactory factory)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(Database db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">        Log.i(<span class="string">"greenDAO"</span>, <span class="string">"Upgrading schema from version "</span> + oldVersion + <span class="string">" to "</span> + newVersion + <span class="string">" by dropping all tables"</span>);</div><div class="line">        dropAllTables(db, <span class="keyword">true</span>);</div><div class="line">        onCreate(db);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/10/数据库greenDAO的使用-三/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-数据库greenDAO的使用-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/09/数据库greenDAO的使用-二/">数据库greenDAO的使用（二）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/09/数据库greenDAO的使用-二/" class="archive-article-date">
+  	<time datetime="2017-03-09T02:02:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇<a href="/2017/03/08/数据库greenDAO的使用-一/">数据库greenDAO的使用（一）</a>我们介绍了greenDAO的相关配置与注解，现在开始介绍数据的操作增、删、查、改。<br>首先我们新建一个实体类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span>(autoincrement = <span class="keyword">true</span>)</div><div class="line">    <span class="keyword">private</span> Long id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="meta">@Transient</span></div><div class="line">    <span class="keyword">private</span> String sex;</div><div class="line">    <span class="comment">//@Transient</span></div><div class="line">    <span class="keyword">private</span> Integer age;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">greenDAO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/09/数据库greenDAO的使用-二/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-数据库greenDAO的使用-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -312,205 +515,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-drakeet-MultiType的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/13/drakeet-MultiType的使用/">drakeet MultiType的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/13/drakeet-MultiType的使用/" class="archive-article-date">
-  	<time datetime="2017-02-13T07:57:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们在日常使用recyclerview时，总会遇到各种比较复杂的布局，这时候仅仅是一个简单的item已经不能满足我们的要求，如何实现这些呢，目前主要有三种方式<br>1、嵌套<br>2、addView<br>3、使用type<br>这些方法虽然都可以实现我们想要的布局，但缺点都是比较明显的，耦合度特别大，每当我们需要修改时，不得不修改Adapter的内容，因此今天我们要谈一款能优雅、解耦的开源库来实现复杂的布局。<br>drakeet的MultiType就是为这而生的，其简单，高效，解耦的实现这些复杂的布局，地址传送门 <a href="https://github.com/drakeet/MultiType">MultiType</a>。MultiType的作者也详细的介绍了该库的如何使用<a href="https://github.com/drakeet/Effective-MultiType/blob/master/README.md">Effective-MultiType
-</a>,今天我们就针对具体的需求，如何使用该库。<br>很早之前就订阅了代码家的gank.io，一直很感谢大牛的无私奉献，每日为我们推送技术文章。因此最近使用代码家的api，开发了一款gank的客户端（应用宝：<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jsqix.dongqing.gank">干货Gank</a>），其中每日gank的数据是比较多的，涉及到Android、iOS、前端等多个领域。<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RecyclerView</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MultiType</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/13/drakeet-MultiType的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-github-page-hexo-建立个人blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/10/github-page-hexo-建立个人blog/">github page +hexo 建立个人blog</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/10/github-page-hexo-建立个人blog/" class="archive-article-date">
-  	<time datetime="2017-02-10T07:26:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <center><br><img src="http://img1.gtimg.com/ent/pics/hv1/82/31/2180/141762487.jpg" alt=""><br></center>
-
-<p>作为一个技术开发人员，博客是记录自己知识的平台，无论是项目中遇到的问题还是自己使用框架、控件等的心得。俗话说好记性不如烂笔头，平时工作或者生活中的大大小小的事记录下来（当然这里不是写纸质日记），总比到时候到处找好。早期程序员都是混各种论坛，写博客就会用第三方的如：CSDN、博客园等，再到后知乎、简书、微信、微博等，最后就是自己搭建博客了。<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/10/github-page-hexo-建立个人blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-自定义Behavior（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/自定义Behavior（一）/">自定义Behavior（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/自定义Behavior（一）/" class="archive-article-date">
-  	<time datetime="2017-02-09T03:21:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><center><br>    <img src="http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2408307430.jpg" alt=""><br></center><br>在<a href="/2017/02/04/android-design库的使用（二）/">android design库的使用（二）</a>一文中我们使用了FloatingActionButton,它是android design给我们带来的一个悬浮button，我们可以通过它做许多许多的事情。Behavior是CoordinatorLayout带来的一个以非侵入的为View添加动态的依赖布局，和处理父布局(CoordinatorLayout)滑动手势的一系列回调，比如我们可以通过它实现动态隐藏于显示FloatingActionButton，实现类似于一个返回顶部的提示悬浮按钮。<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Behavior</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/自定义Behavior（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -524,7 +531,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2017 DongQing
+        &copy; 2018 DongQing
       </div>
            总访问量<span id="busuanzi_value_site_pv"></span>次 | 访客数<span id="busuanzi_value_site_uv"></span>人次 | 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
         <div class="footer-right">
@@ -754,6 +761,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Behavior</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SQLite</a>
               </li>
             
             <div class="clearfix"></div>
